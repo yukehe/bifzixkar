@@ -1,0 +1,371 @@
+{
+  "nav": {
+    "brand": "Staying Bifzixkar",
+    "links": [
+      { "id": "hero", "label": "Home" },
+      { "id": "culture", "label": "Culture" },
+      { "id": "weave", "label": "Weave" },
+      { "id": "sound", "label": "Sound" },
+      { "id": "object", "label": "Object" },
+      { "id": "custom", "label": "Custom" },
+      { "id": "people", "label": "People" },
+      { "id": "products", "label": "Products" },
+      { "id": "about", "label": "About" }
+    ],
+    "langSwitch": "中文"
+  },
+  "hero": {
+    "title": "Staying Bifzixkar",
+    "subtitle": "A Living Archive of Tujia Culture",
+    "tagline": "He Yuke · Community Initiative",
+    "description": "\"Bifzixkar\" is the self-designation of the Tujia ethnic group, meaning \"local people\". The content here is defined by local people, rather than being performed for external observers.",
+    "ctaPrimary": "Explore the Archive",
+    "ctaSecondary": "Support Local Artisans"
+  },
+  "culture": {
+    "sectionTitle": "Project Background and Problem Awareness",
+    "sectionSubtitle": "Project Background",
+    "paragraphs": [
+      {
+        "text": "The project stems from a recurring dilemma in Enshi: youth of the Tujia ethnic group face an extremely narrow range of choices — remaining in the local communities means entering the tourism service sector, trading a low salary for a position of being gazed upon; leaving the homeland for the cities means severing their connection with their cultural roots. Between these two paths, there is no third option."
+      },
+      {
+        "text": "Simultaneously, Tujia culture is being \"preserved\" in a particular manner: brocade patterns are incorporated into scenic area decorations, the Tima ritual is adapted into festival performances, and the \"Crying at Marriage\" song is transformed into stage productions. These preservation efforts ensure the survival of cultural forms, simultaneously leading to the hollowing out of cultural meaning."
+      },
+      {
+        "text": "\"Staying Bifzixkar\" seeks to offer an alternative approach: empowering local youth to serve as recorders and narrators of their own culture, while generating tangible economic benefits through the sale of cultural merchandise, thereby making \"staying in the hometown\" a dignified and financially sustainable choice."
+      }
+    ],
+    "orientation": {
+      "title": "Project Orientation",
+      "paragraphs": [
+        "\"Staying Bifzixkar\" is a digital ethnographic archive website that also serves as a link to a cultural merchandise store centered on Tujia ethnic textile patterns. The two components support each other: the archive provides both the content source and narrative foundation for the merchandise, while the merchandise constitutes the economic basis for the archive's sustainable operation.",
+        "These archives are not intended to \"exhibit ethnic culture,\" but rather are guided by the objective of \"documenting authentic life\" — including aspects that are disappearing, misunderstood, or never previously recounted. The accompanying products target young urban consumers and the design community, positioning them as lifestyle products rather than tourist souvenirs."
+      ]
+    }
+  },
+  "weave": {
+    "sectionTitle": "Weave · Xilankapu",
+    "sectionSubtitle": "Weave · Xilankapu",
+    "description": "This module records the patterns, colors, and symbolic meanings of Xilankapu brocade designs. Each pattern includes: the source of the pattern, oral accounts from the creator, and the application scenarios in which the pattern has been used throughout history and in daily life. This module also serves as a database of patterns for related products.",
+    "patterns": [
+      {
+        "name": "Single Eight-Branch Hook",
+        "nameEn": "Single Eight-Branch Hook",
+        "tujiaName": "Tujia: Thank You",
+        "image": "images/weave/danbagou.jpg",
+        "symbolism": "Peace, family reunion, wealth, prosperity, abundance, and smooth progress. For the Tujia people: warmth, light, life, and strength.",
+        "oralHistory": "Spider Worship: In the primitive beliefs and mythological tales of the Tujia people, the spider is regarded as a mascot that saves the ethnic group from dire crises. According to legend, a spider spun a web at the entrance of a cave, shielding the ancestors of the Tujia people who were fleeing pursuing enemies, thereby enabling them to survive and reproduce. Consequently, spider motifs are viewed as amulets that symbolize warding off evil forces, averting disasters, and ensuring peace and safety. The number \"8\" carries auspicious connotations in Chinese culture, symbolizing \"growth\" (development or wealth), as well as representing all directions and embodying completeness and thoroughness."
+      },
+      {
+        "name": "Sparrow Flower",
+        "nameEn": "Sparrow Flower",
+        "tujiaName": "",
+        "image": "images/weave/yangquehua.jpg",
+        "symbolism": "Safeguarding peace and abundant harvests, fostering family harmony, and auspicious blessings. For the Tujia people: \"The Angel of Spring.\"",
+        "oralHistory": "\"The Incarnation of Xilan\": Xilan, obsessed with brocade weaving, was misunderstood and died, transforming into a sparrow bird. Every spring equinox, it sings to urge farming, symbolizing loyalty to craft and nature, and endowing the guardianship and inheritance of weaving skills. \"Symbol of Family Love and Romance\": The sparrow's call \"Gui Gui Yang\" means \"calling for Guiyang\" in Tujia language, originating from a story of two brothers' deep bond. The younger brother Guishuang, searching for his elder brother Guiyang who was abused to death by the queen mother, transformed into a sparrow bird, calling with tears of blood. This makes the sparrow bird a symbol of family love and loyalty, embodying the Tujia people's yearning for family harmony."
+      },
+      {
+        "name": "Forty-Eight Hooks",
+        "nameEn": "Forty-Eight Hooks",
+        "tujiaName": "",
+        "image": "images/weave/sibashigou.jpg",
+        "symbolism": "Auspiciousness, smooth cooperation, warding off evil, dispelling disasters, and praying for prosperity. For the Tujia people: \"Many children, many blessings; flourishing descendants.\"",
+        "oralHistory": "\"Worship of the Sun and Life\": The \"Forty-Eight Hooks\" is often interpreted as a symbol of the sun and flame, implying the Tujia people's desire for life reproduction and continuity. Its radial hook structure resembles sun rays, symbolizing brightness, warmth, and ethnic prosperity. \"Ethnic Unity and Auspicious Meaning\": The interlocking, layered hook patterns symbolize the close unity and endless vitality of the clan. In wedding customs, \"Forty-Eight Hooks\" is commonly used in wedding dresses or ceremonial brocade, expressing wishes for warding off evil and bringing good fortune, as well as隐喻ing the stability of marriage and fertility."
+      },
+      {
+        "name": "Maogusi",
+        "nameEn": "Maogusi",
+        "tujiaName": "",
+        "image": "images/weave/maogusi.jpg",
+        "symbolism": "Population prosperity, abundant harvests, warding off evil, strong vitality, and perseverance. For the Tujia people: \"Coexistence of humans and nature, reproductive worship.\"",
+        "oralHistory": "\"Reproductive Worship and Life Philosophy\": The intuitive body language of \"Maogusi\" integrates reproductive worship into sacrificial rituals. For example, in \"Swinging the Torch,\" the \"crude stick\" is regarded as a symbol of vitality, and dancers convey the desire for ethnic proliferation through their movements. \"Maogusi and the Legend of the Hunting God\": \"Maogusi\" is closely related to the Tujia people's worship of the hunting god \"Meishan.\" According to legend, Meishan was a female hunter who sacrificed herself to eliminate the tiger threat. Ashamed of her nakedness, she jumped off a cliff. Later generations used grass bundles as her divine image for worship."
+      },
+      {
+        "name": "Chair Flower",
+        "nameEn": "Chair Flower",
+        "tujiaName": "Tujia: Kebika",
+        "image": "images/weave/yizihua.jpg",
+        "symbolism": "When the chair flower blooms, the house is filled with descendants, warmth and happiness, authority, and family prosperity. For the Tujia people: Whether the bride's dowry includes chair flower brocade directly reflects the status of the bride's family and the weaver's skill level.",
+        "oralHistory": "\"Symbolic Transformation of the Grand Chair\": The chair flower pattern originates from the Grand Chair, a symbol of power during the Tusi period. In the Tusi ruling structure, the chair was the concrete carrier of the Tusi king's authority — the Tusi sat on the carved large chair during trials and sacrifices, while commoners could only stand or sit on the ground. The weavers deconstructed the plane form of the Grand Chair into geometric modules. \"The Myth of Skill: Nine Out of Ten Weavers Fail\": A story circulated in western Hunan: the Tusi ordered a weaver to weave the \"Heavenly Throne Pattern\" in a hundred days. A woman, weaving overnight, encountered a mountain ghost and exchanged her hair for supernatural craftsmanship. The next day, the brocade was stunning, but the woman's hair turned completely white. Since then, the chair flower has been bound to the tragic feeling of \"exchanging life for art.\""
+      },
+      {
+        "name": "Baba Rack",
+        "nameEn": "Baba Rack",
+        "tujiaName": "\"Tool for Grilling Glutinous Rice Cakes\"",
+        "image": "images/weave/babajia.jpg",
+        "symbolism": "Abundant food, peaceful home, prosperous career, rolling wealth, and bountiful harvests. For the Tujia people: \"Object Derivation\" — elevating the most ordinary labor tool into a spiritual totem of the ethnic group.",
+        "oralHistory": "The Baba rack is an iron tool used by the Tujia people to grill glutinous rice cakes. It comes in three-legged crescent and four-legged square shapes, with the grilling surface mostly featuring \"ox eye\" or diamond patterns. The weaving pattern of \"Baba Rack\" comes from real life while artistically expressing life. The \"Baba Rack Pattern\" is composed of countless diamond-shaped eyes, forming a work with strong rhythmic sense, rich and bright colors, and exquisite craftsmanship."
+      },
+      {
+        "name": "Sawtooth Flower",
+        "nameEn": "Sawtooth Flower",
+        "tujiaName": "Tujia: Zekabizi (meaning blade pattern)",
+        "image": "images/weave/juchihua.jpg",
+        "symbolism": "Resilience of cultivation, deterring evil, breaking through adversity with sharpness, strength and protection. For the Tujia people: A survival manifesto forged with warp and weft!",
+        "oralHistory": "\"Sharpening of Nature and Survival\": It is the survival blade that cuts through thorns, inscribing the struggle between the ethnic group and nature. The alternation of tooth peaks and valleys interprets the Tujia value of \"living towards death.\" The sawtooth angle strictly maintains 52°, consistent with the blade angle of the Warring States bronze axe unearthed in western Hubei, implying the Tujia historical spirit of \"breaking through adversity with sharpness.\" \"Life and Death Gamble on the Loom\": The technical difficulty ranks among the \"Three Great Difficult Patterns\" of Tujia brocade. High-density sawtooth patterns require 150,000 weft selections. Qing Dynasty records show a success rate of only 9%."
+      },
+      {
+        "name": "Bucket Lid Flower",
+        "nameEn": "Bucket Lid Flower",
+        "tujiaName": "Tujia: Tongbaduza (meaning bucket lid)",
+        "image": "images/weave/tonggaihua.jpg",
+        "symbolism": "Auspiciousness, wealth, abundant family treasure, wealth accumulation, and harvest. For the Tujia people: Gratitude to nature.",
+        "oralHistory": "A wooden bucket generally has a pair of \"ears,\" and its lid forms two notches to fit the bucket's ears. This brocade is paired with various colors and suitable borders. The bucket lid flower derives from daily life objects, named for its resemblance to the flat wooden bucket lid used for storing rice in folk life. The bucket lid flower uses a flat variant diamond as the main body, composing complex patterns of the same size, with elegant and beautiful colors and exquisite weaving. This is the result of Tujia women's long-term observation of life. Meaning: Hiding ten thousand strings of cash without revealing them."
+      },
+      {
+        "name": "Phoenix Through Peony",
+        "nameEn": "Phoenix Through Peony",
+        "tujiaName": "",
+        "image": "images/weave/fengchuanmudan.jpg",
+        "symbolism": "Auspicious wealth, population prosperity, peace and smoothness, elegance and luxury. For the Tujia people: The peony is in the center, with two phoenixes flying towards each other. Although abstract, it possesses great dynamic beauty.",
+        "oralHistory": "According to the Tujia ancient song \"Baishou Song,\" the phoenix is the guiding divine bird of the Ba people during their migration, leading the group to find a place to settle. The peony, as a common flower in the Wuling Mountains, symbolizes fertile land and abundant harvest. The formation of the Phoenix Through Peony pattern is the product of the fusion of Ba people's totem memory and Chu land's flower worship, carrying both the historical memory of ethnic migration and the cherishing of settled life."
+      },
+      {
+        "name": "Plum Blossom",
+        "nameEn": "Plum Blossom",
+        "tujiaName": "Tujia: Friends (Agede)",
+        "image": "images/weave/meihuawen.jpg",
+        "symbolism": "Announcing spring and reporting joy, auspicious peace, happiness, beauty, good fortune, and smooth sailing. For the Tujia people: Inspiring people to persevere in adversity — persistence always leads to light at the end of the tunnel.",
+        "oralHistory": "The sharp edge of a sword comes from grinding; the fragrance of plum blossoms comes from the bitter cold. The plum blossom symbolizes purity and is the flower champion in the hearts of the Tujia people, with the meaning of announcing spring. The plum blossoms are clustered, with nine being the most, extremely expressive. Meanwhile, nine diamond-shaped plum blossom main patterns are arranged diagonally, with a red background, making it even more warm and festive."
+      },
+      {
+        "name": "Mouse Wedding",
+        "nameEn": "Mouse Wedding",
+        "tujiaName": "Tujia: Good Night (Nancicaica)",
+        "image": "images/weave/laoshuquqin.jpg",
+        "symbolism": "Peaceful home and abundant harvests. For the Tujia people: Persistent pursuit of a better life.",
+        "oralHistory": "According to legend, the evening of the third day of the first lunar month is the grand day of the \"Mouse Wedding,\" and you can hear the squeaking of mice. In order not to disturb the mice's wedding, people would go to bed as early as possible that night, and scatter some rice, salt, and cakes in the kitchen or corners where mice often appear, sharing the joy of the newlyweds and the year's harvest with the mice. These items are called \"rice makeup\" or \"mouse sharing money,\" hoping to build a good relationship with mice to reduce mouse damage in the coming year."
+      }
+    ]
+  },
+  "sound": {
+    "sectionTitle": "Sound · Dialect & Songs",
+    "sectionSubtitle": "Sound · Dialect & Songs",
+    "description": "Collecting vanishing Tujia language vocabulary, fragments of crying-at-marriage songs, baishou dance singing styles, Tima ritual chants, and other sound materials. Each audio entry is accompanied by the speaker's identity background and usage context. The focus of recording is not the \"standard version,\" but the authentic voice of a specific person, at a specific time, in a specific occasion.",
+    "entries": [
+      {
+        "category": "Tima Song",
+        "performer": "Peng Jilong, Tujia ethnic group, from Longshan, Hunan. National-level representative inheritor of the Tujia Tima Song intangible cultural heritage project.",
+        "description": "\"Ti\" in Tujia means \"worshipping gods,\" and \"Ma\" means \"people.\" \"Tima\" means \"people who worship gods.\" Tima is also called \"Tujia Lao Si,\" a religious practitioner in the Tujia ethnic group, responsible for sacrificial activities and also practicing medicine. \"Tima Song\" is a long epic of the Tujia ethnic group, practiced through the \"Tima Ri\" ritual, passed down orally from generation to generation, integrating poetry, song, music, and dance. It expresses historical and social life content including the creation of the world, human reproduction, ethnic sacrifice, ethnic migration, hunting and farming, and daily life.",
+        "audio": "videos/timage.mp4",
+        "audioNote": "Peng Jilong documentary (to be supplemented)"
+      },
+      {
+        "category": "Crying at Marriage",
+        "performer": "",
+        "description": "Women begin crying 7-20 days before the wedding, some for over a month, at least three to five days. Wedding songs include crying for parents, crying for brothers and sisters-in-law, crying for uncles, crying for sisters, crying for the matchmaker, crying for hair combing, crying for wearing flowers, crying for farewell to parents, crying for ancestor worship, and crying for boarding the sedan chair. Starting with soft singing, it becomes more sorrowful as the wedding day approaches. The crying is accompanied by gong sounds and firecrackers, creating a震撼 scene. Crying at marriage is not wailing or crying randomly, but crying beautifully, movingly, and empathetically.",
+        "audio": "",
+        "audioNote": "To be collected"
+      },
+      {
+        "category": "Baishou Dance",
+        "performer": "Zhang Mingguang, Tujia ethnic group, from Longshan, Hunan. National-level representative inheritor of the Tujia Baishou Dance intangible cultural heritage project. The 25th generation hall master of Baishou Dance.",
+        "description": "Baishou Dance, called \"Sheba\" or \"Shebagechi\" in Tujia language, meaning \"god-worshipping dance,\" is a sacrificial dance. Its characteristics include swinging side hands, bowing waist and bending knees, with body twisting driving hand swinging. Performance content mostly consists of production and life actions, with hunting, farming, military, and social life as the main expressions. Performance integrates song, music, and dance, accompanied by gongs and drums and Baishou songs. The greatest feature of Baishou Dance is swinging the same-side hand and stepping with the same-side foot.",
+        "audio": "videos/baishouwu.mp4",
+        "audioNote": "Tujia Baishou Dance (to be supplemented)"
+      }
+    ]
+  },
+  "object": {
+    "sectionTitle": "Object · Daily Artifacts",
+    "sectionSubtitle": "Object · Daily Artifacts",
+    "description": "Recording specific objects in the daily life of the Tujia ethnic group — farm tools, food utensils, festival supplies, family heirlooms, etc. Each item is accompanied by the holder's oral account: where this thing comes from, what it was once used for, where it is now, and whether it is still in use.",
+    "items": [
+      { "name": "Stone Mill", "image": "images/object/shimo.jpg", "usage": "Grinding corn kernels into flour, wrapping corn cakes in lotus leaves and steaming them — the staple food of local villagers", "location": "In villagers' kitchens", "status": "In use" },
+      { "name": "Rain Cape", "image": "images/object/suoyi.jpg", "usage": "Worn by villagers when working in the fields on rainy days", "location": "Hanging on the wall under the eaves outside the house", "status": "Not in use" },
+      { "name": "Fire Rack", "image": "images/object/huojiazi.jpg", "usage": "In the humid mountain area, people sit around it for warmth in winter. Water kettles or food can be placed on top for heating. Hooks on the ceiling hold cured meat, serving both warming and smoking functions", "location": "Center of the main hall", "status": "In use" },
+      { "name": "Back Basket", "image": "images/object/beilou.jpg", "usage": "Villagers carry agricultural products to the market when working in the fields", "location": "Inside the house or under the eaves outside", "status": "In use" },
+      { "name": "Medicine Grinder", "image": "images/object/yaonianzi.jpg", "usage": "Used for crushing herbal medicines. Pengjiazhai people live by the mountains, which have many herbs. Villagers go up the mountain to collect them", "location": "In the storage room", "status": "In use" },
+      { "name": "Plow Harrow", "image": "images/object/lidiba.jpg", "usage": "Used by villagers for plowing fields", "location": "Under the eaves outside the house", "status": "Not in use" },
+      { "name": "Wine Jar", "image": "images/object/jiutanzi.jpg", "usage": "Jar for holding wine", "location": "Kitchen inside the house", "status": "In use" },
+      { "name": "Wedding Bed", "image": "images/object/hunchuang.jpg", "usage": "Old-style wedding bed for newlyweds", "location": "In the old house", "status": "No longer used, few young people remain in the village" },
+      { "name": "Winnowing Fan", "image": "images/object/fengdou.jpg", "usage": "For blowing dried rice", "location": "Storage room", "status": "Not in use" },
+      { "name": "Bamboo Rake", "image": "images/object/liba.jpg", "usage": "For raking corn drying on the ground outside", "location": "Under the eaves", "status": "In use" },
+      { "name": "Bowl Smashing", "image": "images/object/shuaiwan.jpg", "usage": "Earth bowls used for bowl-smashing wine ceremony. The bowls are small and shallow; after drinking the wine, the bowls are smashed on the ground", "location": "Inside the kitchen", "status": "In use" },
+      { "name": "Drying Basket", "image": "images/object/shailou.jpg", "usage": "Mountain transportation is inconvenient, so many foods like mountain mushrooms and cowpeas are dried for winter consumption. This is a basket for drying food", "location": "Hanging on the storage room wall", "status": "In use" },
+      { "name": "Honey Bucket", "image": "images/object/fengmitong.jpg", "usage": "Every household places such buckets under the eaves to naturally collect honey from the mountains", "location": "Under the eaves", "status": "In use" },
+      { "name": "Window Lattice Carving", "image": "images/object/chuangling.jpg", "usage": "Window decorative carving", "location": "Windows", "status": "In use" },
+      { "name": "Door Panel", "image": "images/object/menban.jpg", "usage": "Traditional wooden door panel", "location": "Room doors", "status": "In use" },
+      { "name": "Tofu Press", "image": "images/object/yaban.jpg", "usage": "An old grandmother said this is for pressing tofu. Villagers grow their own soybeans and make bean sheets. Bean sheets are a specialty of the village", "location": "Hanging on the wall in the corridor between rooms", "status": "In use" },
+      { "name": "Pickling Jar", "image": "images/object/yangang.jpg", "usage": "Villagers pickle vegetables themselves", "location": "In the corridor from the kitchen", "status": "In use" },
+      { "name": "Plow Tool", "image": "images/object/liju.jpg", "usage": "Tool for plowing fields", "location": "In the corner outside the house", "status": "Not in use" },
+      { "name": "Lamp", "image": "images/object/dengju.jpg", "usage": "Now it's an electrified lantern", "location": "In the house corridor", "status": "In use" },
+      { "name": "Rice Pounder", "image": "images/object/chong.jpg", "usage": "For pounding rice. Before festivals, villagers pound rice and make glutinous rice cakes", "location": "", "status": "Not in use" },
+      { "name": "Hanging Stove", "image": "images/object/diaolu.jpg", "usage": "Height adjustable, can hold corn or potatoes inside for roasting", "location": "Over the fire pit in the fire room", "status": "In use" },
+      { "name": "Storage Basket", "image": "images/object/sheng lou.jpg", "usage": "For storage", "location": "Corner of the room", "status": "In use" }
+    ]
+  },
+  "custom": {
+    "sectionTitle": "Custom · Folkways & Taboos",
+    "sectionSubtitle": "Custom · Folkways & Taboos",
+    "description": "Organizing local life rules: solar term customs, dietary taboos, house-building conventions, and details in wedding and funeral rituals. These contents largely exist in the memories of the elderly, have never been systematically recorded, and cannot find a place in the intangible cultural heritage recognition system.",
+    "customs": [
+      {
+        "title": "Crying at Marriage",
+        "content": "Women begin crying 7-20 days before the wedding, some for over a month, at least three to five days. Wedding songs include crying for parents, brothers and sisters-in-law, uncles, sisters, the matchmaker, hair combing, wearing flowers, farewell to parents, ancestor worship, and boarding the sedan chair. Starting with soft singing, it becomes more sorrowful as the wedding day approaches. The bride expresses gratitude for parents' upbringing, deep affection for siblings, and feelings of parting, or expresses worries about future life. The climax of crying at marriage is reached on the day before and the morning of the wedding, with crying accompanied by gong sounds and firecrackers, creating a震撼 scene. Crying at marriage is not wailing or crying randomly, but crying beautifully, movingly, and empathetically."
+      },
+      {
+        "title": "Door-Blocking Wine",
+        "subtitle": "The Grandest Welcome Ceremony",
+        "content": "When you enter a Tujia village or attend a festival, you will often encounter the \"Door-Blocking Wine.\" This is the highest etiquette of the Tujia people for treating guests. Young men and women in festive attire sing mountain songs and hold rice wine at the village gate to welcome guests. Usually, three bowls (or three sips) must be drunk, symbolizing \"Triple Yang Opening for Peace.\" Receive the wine bowl with both hands, touch it to your lips as a gesture, and sincerely thank the hosts to win their smiles and respect."
+      },
+      {
+        "title": "Funeral Dance (Saye'erhe)",
+        "subtitle": "An Open-minded Celebration of Life",
+        "content": "After a Tujia elder passes away peacefully, friends and family dance \"Saye'erhe\" throughout the night, using vigorous dance and ballads to bid farewell to the deceased and celebrate their complete life. This is by no means sorrowful, but rather the Tujia people's open-minded view of life and death — \"happily sending off the deceased.\" If you encounter this during travel, please maintain solemnity and respect. This is a precious window for understanding the spiritual core of the Tujia people."
+      },
+      {
+        "title": "Daughters' Festival",
+        "subtitle": "The Tujia \"Valentine's Day\"",
+        "content": "On the twelfth day of the seventh lunar month each year, a grand \"Daughters' Festival\" is held. On this day, Tujia girls dress in their finest and go out, seeking their beloved through trading goods and singing mountain songs — bold and romantic."
+      },
+      {
+        "title": "Solar Term Customs: Busy Year in the Twelfth Lunar Month and Paotang Banquet",
+        "content": "The most grand solar term customs in Pengjiazhai are concentrated in the twelfth lunar month. Every year in the twelfth month, the cry of the New Year pig rings through the village, which is the prelude to the \"Paotang Banquet\" folk feast. The Tujia people follow ancient rites, cooking fresh pork into steaming hot dishes, setting up a long table banquet stretching tens of meters. Tujia girls sing toasting songs, pouring rice wine into guests' mouths in a \"High Mountain Flowing Water\" ceremony. In the village, the sound of pounding glutinous rice, the sizzling of bean sheets, and the drum beats of the Nuo dance intertwine, forming the unique picture of \"busy year\" in the ancient Tujia village. The Tujia people's main festivals are April 8th, June 6th, and the Tujia New Year, with the Tujia New Year being the most grand, commonly called \"Guo Nian.\" Lunar New Year's Eve, also called Ye Nian, is the day before the Han people's New Year. The big year is the 29th of the twelfth lunar month, and the small year is the 28th. At that time, every household would slaughter the New Year pig and prepare Paotang rice."
+      }
+    ],
+    "taboos": [
+      {
+        "title": "The Fire Pit is Sacred and Must Not Be Offended",
+        "content": "In traditional Tujia stilt houses, the fire pit is the center of the family, regarded as the dwelling place of ancestral spirits. You cannot step on the tripod of the fire pit with your feet, nor can you spit or throw dirty objects into the fire pit."
+      },
+      {
+        "title": "Avoid Inauspicious Words During Festivals",
+        "content": "During festivals and happy events, avoid saying inauspicious words and speak more auspicious words. During the New Year period, cats are forbidden from entering the house, commonly known as \"pigs bring poverty, dogs bring wealth, cats bring mourning clothes.\" During sacrifices, the smell of cats is also avoided, and cats are forbidden from approaching."
+      },
+      {
+        "title": "Dietary Taboos",
+        "content": "The Tujia people taboo eating animals that have already died, that is, \"not eating dead things.\" Fish is taboo during the New Year — fish is not eaten during the Lunar New Year period to avoid inauspicious implications."
+      },
+      {
+        "title": "Banquet Etiquette",
+        "content": "The elderly and distinguished guests should be taken care of first, and young people need to dine in order to show respect. Making inappropriate remarks or behavior at the banquet is considered a serious taboo, to avoid bringing displeasure to the host."
+      }
+    ],
+    "architecture": {
+      "title": "House-Building Conventions",
+      "paragraphs": [
+        "The construction of stilt houses in Pengjiazhai follows strict traditional rules. Materials are only taken from yang slope cedar trees, and the main house adopts a \"three pillars and four riders\" structure, symbolizing the three talents of heaven, earth, and humanity. \"Stilt houses are entirely connected by mortise and tenon joints, without a single nail. When repairing old houses as old, traditional mortise and tenon structures must be used for restoration, without moving the building's framework.\"",
+        "In terms of architectural layout, Pengjiazhai follows the mountain terrain. Single households mostly have a pattern of three main rooms and hanging wing rooms, usually with one main and one wing as the primary layout, supplemented by one main and two wings in a \"dustpan mouth\" shape, surrounding the courtyard to form small courtyard-style spaces, each becoming an independent enclosed space.",
+        "From the selection of the homestead, in addition to ventilation, sunlight, waterproofing, and moisture prevention, the orientation and surrounding mountains must also be considered. Site selection, construction start, and mountain direction must all be linked to the stars and the owner's birth date and time, calculated according to the principles of yin-yang and the five elements generating and overcoming each other. The stilt house architecture of Pengjiazhai embodies the \"unity of heaven and humanity\" feng shui concept in architecture, following the feng shui principle of \"mountains surrounding and water embracing, storing wind and gathering qi.\"",
+        "In terms of architectural structure, stilt houses are divided into single-hanging, double-hanging, flat-ground hanging, and single-line hanging types. The main house is generally on solid ground, with wing rooms on one or both sides supported by wooden structures, so it is also called a semi-stilted building. Generally, the first floor is used for farm tools, miscellaneous items, and livestock, the second floor for living, and the third floor for storing grain or storage. This prevents moisture and insects while utilizing space. This column-and-beam frame construction connects columns, beams, and cross-beams through mortise and tenon joints, which can dissipate force through overall coordination, providing good earthquake resistance.",
+        "The wood for building stilt houses comes from the mountains. When Tujia people harvest wood, there are also certain conventions, called \"cutting green mountains.\" Generally, toon trees or purple trees are selected, as \"chun\" and \"zi\" are homophones for \"spring\" and \"children,\" which are auspicious. The second step is processing the main beam and column materials, called \"setting up the main beam.\" Patterns such as the eight trigrams, taiji diagram, and lotus seeds are painted on the beam. The third step is called \"arranging fans,\" which means connecting the processed beams and columns with tenons and arranging them into wooden fans. The fourth step is \"erecting the house and setting the pillars.\" The owner selects an auspicious day and invites neighbors to help. Before raising the beam, a beam sacrifice must be performed. The window lattices of stilt houses in Pengjiazhai are mostly simple square grids, simple and elegant. They are painted with earth lacquer processed by boiling the juice of a certain tree, which can prevent corrosion and insects, and is non-toxic and harmless."
+      ]
+    },
+    "wedding_funeral": {
+      "title": "Wedding and Funeral Rituals",
+      "paragraphs": [
+        "The marriage customs of the Tujia ethnic group have clear taboo rules. Marriage between relatives is strictly prohibited, especially intergenerational marriage. There are also conventions regarding marriage directions — people from the same village or adjacent villages often avoid marrying each other, believing that this easily causes discord.",
+        "At the wedding ceremony, both families engage in complex bargaining, which is a consideration of the status of both families. There is a saying that \"before marrying, first ask about the seal,\" meaning to ensure that the status and financial power of the families match.",
+        "Regarding funeral customs, family members cannot go out during the mourning period, let alone participate in celebratory activities to show mourning. The belongings of the deceased cannot be casually cleaned up, especially items closely related to the deceased's life. The cleaning process needs to be very careful. Traditionally, a place with good feng shui is chosen for burial, and correct funeral rituals are believed to ensure the peace of the deceased's soul."
+      ],
+      "summary": "Marriage taboos: Marriage between relatives is prohibited; marrying within the same village is avoided."
+    }
+  },
+  "people": {
+    "sectionTitle": "People · Contemporary Tujia",
+    "sectionSubtitle": "People · Contemporary Tujia",
+    "description": "Recording the Tujia people in today's real life — not performers, not intangible heritage inheritors, but ordinary young people, small merchants, agricultural laborers, and those who stayed behind. Each person's entry is mainly based on their own self-narration, recording how they understand themselves and their relationship with culture in contemporary circumstances.",
+    "profiles": [
+      {
+        "name": "Peng Maolin",
+        "age": "47 years old",
+        "role": "Returning hometown agritainment restaurant owner",
+        "image": "images/people/pengmaolin.jpg",
+        "quote": "I am from Pengjiazhai. My wife is from the neighboring village. This house is our own. I used to work outside. I came back the year before last, not because of sentiment, but because I couldn't compete outside anymore, couldn't do physical labor anymore, and the elderly at home were not well and needed someone to take care of them. Now I manage the restaurant opened in our stilt house. There are quite a lot of tourists. When tourists come, they love to ask, 'What special rules do you Tujia people still have now?' Sometimes I follow what my grandfather taught me — slaughtering the New Year pig in the twelfth month, making glutinous rice cakes, singing toasting songs. But to be honest, I don't necessarily do all of that for my own New Year anymore. The culture I understand may no longer be those 'rules' that must be followed, but rather a... base color, an instinct? For example, I still taboo saying inauspicious words in the first lunar month."
+      },
+      {
+        "name": "Long Mei",
+        "age": "32 years old",
+        "role": "Small supermarket owner at the village entrance",
+        "image": "images/people/longmei.jpg",
+        "quote": "My shop sells water, snacks, tissues, and also some Tujia brocade coasters and small wallets, all handmade by the aunties in the village. You ask about culture? What I deal with every day is 'money' and 'goods.' When outside tourists come to buy brocade, they always ask what the patterns mean. My mother taught me — that's the 'Tai Tai Hua,' which protects children; that's the 'Swastika Pattern,' representing continuous fortune. Now I explain these even more smoothly than selling goods. My daughter is eight years old. She comes to help me watch the shop after school. She points at the '卍' character and says, 'Mom, we also have this in our art textbook.' I believe what my mother said — don't touch sacrificial things during menstruation, just for peace of mind."
+      },
+      {
+        "name": "Yang Chunxiu",
+        "age": "49 years old",
+        "role": "Left-behind housewife",
+        "image": "images/people/yangchunxiu.jpg",
+        "quote": "My husband and son are both working in Zhejiang. There are many women like me in the village. My life is just these three meals a day, and the festivals. Qingming, Dragon Boat Festival, Ghost Festival, New Year — no matter how busy or tired, the sacrifices that should be done cannot be less. When the man is not here, I represent the family to offer incense, arrange food, and burn paper money. I tell the ancestors in my heart to protect the people outside. I also know that young people don't believe in this anymore. My daughter says on video call, 'Mom, your ways are too troublesome.' Troublesome? Yes, it's troublesome. But if I don't do it, there's an empty space in my heart. You ask if this is culture or superstition? I think it's affection. It's our Tujia people's way of 'taking care' of our own people, from birth to death. Now the village has become a scenic spot, but this 'care' is still held in the hands of those of us who stayed behind. It hasn't been lost."
+      },
+      {
+        "name": "Old Man Peng",
+        "age": "68 years old",
+        "role": "Farming and maintaining ancient buildings",
+        "image": "images/people/penglaohan.jpg",
+        "quote": "I've never left this mountain in my whole life. When I was young, I learned to build stilt houses from my father's generation — yang slope cedar trees, three pillars and four riders, mortise against mortise, without a single iron nail. Now no one builds new ones anymore. My work has become 'repairing the old.' The tourism bureau gives money, requiring 'repairing the old as old.' The ancestors' rules are all in the wood. Which beam can be replaced, which tile must be kept — I have an account in my heart. My wife has passed away, my daughter is married and moved out, but she and her son-in-law opened a guesthouse at the village entrance, quite big. I still farm the land, and financially I have no problems at all."
+      }
+    ]
+  },
+  "products": {
+    "sectionTitle": "Merchandise",
+    "sectionSubtitle": "Products",
+    "description": "Xilankapu is the representative of Tujia women's needlework culture. All products here use Xilankapu brocade patterns as the core visual language, positioned as urban lifestyle products. Each product page links to the corresponding pattern entry, where buyers can see the story and origin behind the pattern.",
+    "categories": [
+      {
+        "name": "Soft Textiles",
+        "nameEn": "Soft Textiles",
+        "items": "Canvas bags, tea towels, shopping bags, handkerchiefs, aprons, cloth coasters"
+      },
+      {
+        "name": "Home Décor",
+        "nameEn": "Home Décor",
+        "items": "Pillow covers, cushion covers, table runners, bed end throws, entrance mats"
+      },
+      {
+        "name": "Outdoor & Living",
+        "nameEn": "Outdoor & Living",
+        "items": "Folding fishing stools (with brocade seat), outdoor picnic mats, bucket hats (cloth), wrist bags"
+      },
+      {
+        "name": "Stationery & Accessories",
+        "nameEn": "Stationery & Accessories",
+        "items": "Cloth notebook covers, brocade bookmarks, woven keychains, hairbands and hair ties"
+      }
+    ],
+    "productList": [
+      { "id": 1, "name": "Coaster", "link": "https://s.taobao.com/search?q=西兰卡普杯垫", "price": "RMB 22.00", "image": "images/products/cuppad1.jpg" },
+      { "id": 2, "name": "Mouse Pad", "link": "https://s.taobao.com/search?q=西兰卡普鼠标垫", "price": "RMB 22.00", "image": "images/products/mousepad1.jpg" },
+      { "id": 3, "name": "Mug", "link": "https://s.taobao.com/search?q=傩戏面具马克杯", "price": "RMB 58.00", "image": "images/products/mug1.jpg" },
+      { "id": 4, "name": "Eraser", "link": "https://s.taobao.com/search?q=土家族白虎图腾橡皮擦", "price": "RMB 15.00", "image": "images/products/eraser1.jpg" },
+      { "id": 5, "name": "USB Cable", "link": "https://s.taobao.com/search?q=土家族数据线挂绳", "price": "RMB 38.00", "image": "images/products/cable1.jpg" },
+      { "id": 6, "name": "Long Socks", "link": "https://s.taobao.com/search?q=西兰卡普棉袜长袜", "price": "RMB 12.80", "image": "images/products/socks1.jpg" },
+      { "id": 7, "name": "Short Socks", "link": "https://s.taobao.com/search?q=西兰卡普虎头花短袜", "price": "RMB 12.80", "image": "images/products/socks2.jpg" },
+      { "id": 8, "name": "Coaster · Eight Lions", "link": "https://s.taobao.com/search?q=恩施西兰卡普杯垫", "price": "RMB 15.80", "image": "images/products/cuppad2.jpg" },
+      { "id": 9, "name": "Coaster · Chair Flower", "link": "https://s.taobao.com/search?q=恩施西兰卡普椅子花杯垫", "price": "RMB 15.80", "image": "images/products/cuppad3.jpg" },
+      { "id": 10, "name": "Coaster · Double Sparrow", "link": "https://s.taobao.com/search?q=西兰卡普双阳雀杯垫", "price": "RMB 15.80", "image": "images/products/cuppad4.jpg" },
+      { "id": 11, "name": "Coaster · Sparrow Flower", "link": "https://s.taobao.com/search?q=西兰卡普阳雀花杯垫", "price": "RMB 38.00", "image": "images/products/cuppad5.jpg" },
+      { "id": 12, "name": "Canvas Bag · Double Sparrow", "link": "https://s.taobao.com/search?q=西兰卡普双阳雀斜挎包", "price": "RMB 89.80", "image": "images/products/bag1.jpg" },
+      { "id": 13, "name": "Canvas Bag · Heritage Brocade", "link": "https://s.taobao.com/search?q=非遗土家织锦斜挎包", "price": "RMB 128.00", "image": "images/products/bag2.jpg" },
+      { "id": 14, "name": "Briefcase", "link": "https://s.taobao.com/search?q=西兰卡普礼品公文包", "price": "RMB 298.00", "image": "images/products/bag3.jpg" },
+      { "id": 15, "name": "Handbag · Red Eight Hook", "link": "https://s.taobao.com/search?q=西兰卡普织锦手提包", "price": "RMB 498.00", "image": "images/products/bag4.jpg" },
+      { "id": 16, "name": "Handbag · Tiger Head Flower", "link": "https://s.taobao.com/search?q=西兰卡普虎头花手提包", "price": "RMB 498.00", "image": "images/products/bag5.jpg" },
+      { "id": 17, "name": "Cushion · Eight Hook", "link": "https://s.taobao.com/search?q=西兰卡普靠枕八勾纹", "price": "RMB 258.00", "image": "images/products/pillow1.jpg" },
+      { "id": 18, "name": "Cushion · Sparrow Bird", "link": "https://s.taobao.com/search?q=西兰卡普靠枕阳雀鸟", "price": "RMB 258.00", "image": "images/products/pillow2.jpg" },
+      { "id": 19, "name": "Table Runner", "link": "https://s.taobao.com/search?q=西兰卡普桌旗茶席", "price": "RMB 89.00", "image": "images/products/tablecloth1.jpg" },
+      { "id": 20, "name": "Cap", "link": "https://s.taobao.com/search?q=土家族西兰卡普鸭舌帽", "price": "RMB 38.00", "image": "images/products/hat1.jpg" },
+      { "id": 21, "name": "Folding Chair", "link": "https://s.taobao.com/search?q=西兰卡普户外折叠椅", "price": "RMB 7.50", "image": "images/products/chair1.jpg" },
+      { "id": 22, "name": "Picnic Mat", "link": "https://s.taobao.com/search?q=户外野餐垫防潮垫", "price": "RMB 15.80", "image": "images/products/mat1.jpg" },
+      { "id": 23, "name": "Hair Band", "link": "https://s.taobao.com/search?q=西兰卡普发箍", "price": "RMB 48.00", "image": "images/products/hairband1.jpg" },
+      { "id": 24, "name": "Small Mirror", "link": "https://s.taobao.com/search?q=非遗土家织锦小镜子", "price": "RMB 58.00", "image": "images/products/mirror1.jpg" },
+      { "id": 25, "name": "Hair Ribbon", "link": "https://s.taobao.com/search?q=西兰卡普手工编织发带", "price": "RMB 78.00", "image": "images/products/hairband2.jpg" },
+      { "id": 26, "name": "Bookmark", "link": "https://s.taobao.com/search?q=西兰卡普书签非遗", "price": "RMB 48.00", "image": "images/products/bookmark1.jpg" }
+    ]
+  },
+  "about": {
+    "sectionTitle": "About the Project",
+    "sectionSubtitle": "About the Project",
+    "items": [
+      "All archive entries have been confirmed by the individuals being recorded.",
+      "The patterns used in merchandise have obtained explicit authorization from the original weavers.",
+      "The revenue distribution mechanism is confirmed in writing with participants before the project starts — transparent, verifiable, and traceable.",
+      "The project does not use \"protecting endangered culture\" as its external messaging.",
+      "The researcher's Tujia identity is a resource for entering the community, but does not equate to natural spokesperson rights for all community members' experiences."
+    ]
+  },
+  "footer": {
+    "text": "Staying Bifzixkar · A Living Archive of Tujia Culture",
+    "credit": "He Yuke · Community Initiative"
+  }
+}

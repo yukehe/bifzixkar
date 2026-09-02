@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <script>
+    // Force reload when page is restored from browser back/forward cache
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) window.location.reload();
+    });
+  </script>
+  <title>Staying Bifzixkar · 一部活着的土家族文化档案</title>
+  <meta name="description" content="Staying Bifzixkar - A Living Archive of Tujia Culture. Digital ethnographic archive and cultural merchandise.">
+  <link rel="stylesheet" href="css/style.css?v=202609011">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+</head>
+<body>
+
+  <!-- Navigation with Dropdowns -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">Staying Bifzixkar</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <!-- Nav Item 1: 织·西兰卡普 -->
+        <li class="nav-item">
+          <a href="#weave" class="nav-link" data-section="weave" data-nav-key="weave">织·西兰卡普</a>
+        </li>
+        <!-- Nav Item 4: 俗·习俗与禁忌 -->
+        <li class="nav-item">
+          <a href="#custom" class="nav-link" data-section="custom" data-nav-key="custom">俗·习俗与禁忌</a>
+        </li>
+        <!-- Nav Item 4: 物·日常器物 -->
+        <li class="nav-item">
+          <a href="#object" class="nav-link" data-section="object" data-nav-key="object">物·日常器物</a>
+        </li>
+        <!-- Nav Item 5: 声·方言与歌 -->
+        <li class="nav-item">
+          <a href="#sound" class="nav-link" data-section="sound" data-nav-key="sound">声·方言与歌</a>
+        </li>
+        <!-- Nav Item 6: 人·当代土家人 -->
+        <li class="nav-item">
+          <a href="#people" class="nav-link" data-section="people" data-nav-key="people">人·当代土家人</a>
+        </li>
+        <!-- Nav Item 7: 文创产品 (with dropdown) -->
+        <li class="nav-item nav-dropdown-parent">
+          <a href="#products" class="nav-link" data-section="products" data-nav-key="products">文创产品</a>
+          <ul class="nav-dropdown">
+            <li><a href="#product-soft" data-section="product-soft" data-nav-key="softFabrics">纺织织物</a></li>
+            <li><a href="#product-home" data-section="product-home" data-nav-key="homeFurnishings">家居软装</a></li>
+            <li><a href="#product-stationery" data-section="product-stationery" data-nav-key="stationery">文具小物件</a></li>
+            <li><a href="#product-outdoor" data-section="product-outdoor" data-nav-key="outdoor">户外生活方式</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button class="lang-switch" id="langSwitch">EN</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title" data-i18n="hero.title"></h1>
+      <h2 class="hero-subtitle" data-i18n="hero.subtitle"></h2>
+      <p class="hero-description" data-i18n="hero.description"></p>
+      <div class="hero-actions">
+        <a href="#project-bg" class="btn btn-primary" data-i18n="hero.cta1"></a>
+        <a href="#culture-archive" class="btn btn-outline" data-i18n="hero.cta2"></a>
+        <a href="#products" class="btn btn-outline" data-i18n="hero.cta3"></a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- Project Background Section -->
+  <section class="section section-project-bg" id="project-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="projectBg.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="projectBg.sectionSubtitle"></p>
+      </div>
+      <!-- Image above text -->
+      <div class="project-bg-image" id="projectBgImage">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="project-bg-content" id="projectBgContent">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture Archive Section -->
+  <section class="section section-culture-archive" id="culture-archive">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="cultureArchive.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="cultureArchive.sectionSubtitle"></p>
+      </div>
+      <div class="culture-archive-content" id="cultureArchiveContent">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Weave Section -->
+  <section class="section section-weave" id="weave">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="weave.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="weave.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="weave.description"></p>
+      <div class="pattern-grid" id="patternGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Section (with sub-anchors) -->
+  <section class="section section-custom" id="custom">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="custom.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="custom.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="custom.description"></p>
+
+      <!-- Customs sub-anchor -->
+      <div class="custom-subsection" id="custom-customs">
+        <h3 class="subsection-title" data-i18n-label="习俗 Customs"></h3>
+        <div class="custom-cards" id="customCards">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Solar Terms sub-anchor -->
+      <div class="custom-subsection" id="custom-solar">
+        <h3 class="subsection-title" data-i18n-label="节气 Solar Terms"></h3>
+        <div class="solar-content" id="solarContent">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Taboos sub-anchor -->
+      <div class="custom-subsection" id="custom-taboo">
+        <h3 class="subsection-title" data-i18n-label="禁忌 Taboos"></h3>
+        <div class="taboo-list" id="tabooList">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Building sub-anchor -->
+      <div class="custom-subsection" id="custom-building">
+        <h3 class="subsection-title" data-i18n-label="建房讲究 Building"></h3>
+        <div class="building-content" id="buildingContent">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Wedding & Funeral sub-anchor -->
+      <div class="custom-subsection" id="custom-wedding">
+        <h3 class="subsection-title" data-i18n-label="婚丧仪式 Wedding & Funeral"></h3>
+        <div class="wedding-content" id="weddingContent">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Object Section -->
+  <section class="section section-object" id="object">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="object.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="object.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="object.description"></p>
+      <div class="object-grid" id="objectGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Sound Section -->
+  <section class="section section-sound" id="sound">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="sound.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="sound.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="sound.description"></p>
+      <div class="sound-list" id="soundList">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- People Section -->
+  <section class="section section-people" id="people">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="people.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="people.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="people.description"></p>
+      <div class="people-grid" id="peopleGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Parent Section -->
+  <div id="products-anchor"></div>
+
+  <!-- Products Section -->
+  <section class="section section-products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="products.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="products.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="products.description"></p>
+
+      <!-- Soft Fabrics Sub-section -->
+      <div class="product-subsection" id="product-soft">
+        <h3 class="product-category-title" data-i18n="products.softFabrics.title"></h3>
+        <div class="product-grid" id="productSoftGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Home Furnishings Sub-section -->
+      <div class="product-subsection" id="product-home">
+        <h3 class="product-category-title" data-i18n="products.homeFurnishings.title"></h3>
+        <div class="product-grid" id="productHomeGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Stationery Sub-section -->
+      <div class="product-subsection" id="product-stationery">
+        <h3 class="product-category-title" data-i18n="products.stationery.title"></h3>
+        <div class="product-grid" id="productStationeryGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Outdoor Lifestyle Sub-section -->
+      <div class="product-subsection" id="product-outdoor">
+        <h3 class="product-category-title" data-i18n="products.outdoor.title"></h3>
+        <div class="product-grid" id="productOutdoorGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text" data-i18n="footer.text"></p>
+    </div>
+  </footer>
+
+  <!-- Pattern Modal -->
+  <div class="modal" id="patternModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    // Dynamic loader: always fetch fresh app.js, bypassing CDN/browser cache
+    (function(){
+      var s=document.createElement('script');
+      s.src='js/app.js?t='+Date.now();
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>

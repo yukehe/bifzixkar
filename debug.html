@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostic - Staying Bifzixkar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    #debug-panel {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 99999;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 13px;
+      padding: 16px 20px;
+      max-height: 60vh;
+      overflow-y: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      border-bottom: 3px solid #e74c3c;
+    }
+    #debug-panel h3 {
+      color: #e74c3c;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+    #debug-panel .ok { color: #2ecc71; }
+    #debug-panel .err { color: #e74c3c; }
+    #debug-panel .warn { color: #f39c12; }
+    #debug-panel .info { color: #3498db; }
+    #debug-panel .row {
+      padding: 3px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    #debug-panel .label {
+      color: #888;
+      display: inline-block;
+      width: 280px;
+    }
+    #debug-close {
+      position: absolute;
+      top: 10px; right: 16px;
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 4px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Debug Panel -->
+  <div id="debug-panel">
+    <button id="debug-close" onclick="this.parentElement.remove()">Close</button>
+    <h3>Staying Bifzixkar - Diagnostic Panel</h3>
+    <div id="debug-content">Loading...</div>
+  </div>
+
+  <!-- Same structure as index.html -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">Staying Bifzixkar</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks"></ul>
+      <button class="lang-switch" id="langSwitch">EN</button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tagline" data-i18n="hero.tagline"></p>
+      <h1 class="hero-title" data-i18n="hero.title"></h1>
+      <h2 class="hero-subtitle" data-i18n="hero.subtitle"></h2>
+      <p class="hero-description" data-i18n="hero.description"></p>
+      <div class="hero-actions">
+        <a href="#culture" class="btn btn-primary" data-i18n="hero.ctaPrimary"></a>
+        <a href="#products" class="btn btn-outline" data-i18n="hero.ctaSecondary"></a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator"><span></span></div>
+  </section>
+
+  <section class="section section-culture" id="culture">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="culture.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="culture.sectionSubtitle"></p>
+      </div>
+      <div class="culture-content" id="cultureContent"></div>
+    </div>
+  </section>
+
+  <section class="section section-weave" id="weave">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="weave.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="weave.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="weave.description"></p>
+      <div class="pattern-grid" id="patternGrid"></div>
+    </div>
+  </section>
+
+  <section class="section section-sound" id="sound">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="sound.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="sound.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="sound.description"></p>
+      <div class="sound-list" id="soundList"></div>
+    </div>
+  </section>
+
+  <section class="section section-object" id="object">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="object.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="object.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="object.description"></p>
+      <div class="object-grid" id="objectGrid"></div>
+    </div>
+  </section>
+
+  <section class="section section-custom" id="custom">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="custom.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="custom.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="custom.description"></p>
+      <div class="custom-subsection">
+        <h3 class="subsection-title" data-i18n-label="习俗 Customs"></h3>
+        <div class="custom-cards" id="customCards"></div>
+      </div>
+      <div class="custom-subsection">
+        <h3 class="subsection-title" data-i18n-label="禁忌 Taboos"></h3>
+        <div class="taboo-list" id="tabooList"></div>
+      </div>
+      <div class="custom-subsection">
+        <h3 class="subsection-title" data-i18n="custom.architecture.title"></h3>
+        <div class="architecture-content" id="architectureContent"></div>
+      </div>
+      <div class="custom-subsection">
+        <h3 class="subsection-title" data-i18n="custom.wedding_funeral.title"></h3>
+        <div class="wedding-funeral-content" id="weddingFuneralContent"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-people" id="people">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="people.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="people.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="people.description"></p>
+      <div class="people-grid" id="peopleGrid"></div>
+    </div>
+  </section>
+
+  <section class="section section-products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="products.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="products.sectionSubtitle"></p>
+      </div>
+      <p class="section-description" data-i18n="products.description"></p>
+      <div class="product-categories" id="productCategories"></div>
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <section class="section section-about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="about.sectionTitle"></h2>
+        <p class="section-subtitle" data-i18n="about.sectionSubtitle"></p>
+      </div>
+      <div class="about-list" id="aboutList"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text" data-i18n="footer.text"></p>
+      <p class="footer-credit" data-i18n="footer.credit"></p>
+    </div>
+  </footer>
+
+  <div class="modal" id="patternModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    // Global error catcher — runs BEFORE app.js
+    window.__debugErrors = [];
+    window.__debugWarnings = [];
+    window.onerror = function(msg, url, line, col, error) {
+      window.__debugErrors.push({
+        message: msg,
+        source: url + ' line:' + line + ' col:' + col,
+        stack: error ? error.stack : 'N/A'
+      });
+      updateDebugPanel();
+    };
+    window.onunhandledrejection = function(event) {
+      window.__debugErrors.push({
+        message: 'Unhandled Promise Rejection: ' + event.reason,
+        source: 'promise',
+        stack: event.reason && event.reason.stack ? event.reason.stack : 'N/A'
+      });
+      updateDebugPanel();
+    };
+    function updateDebugPanel() {
+      var panel = document.getElementById('debug-content');
+      if (!panel) return;
+      var html = '';
+
+      // 1. Basic environment
+      html += '<div class="row"><span class="label">Protocol:</span> <span class="' +
+        (location.protocol === 'file:' ? 'warn' : 'ok') + '">' + location.protocol + '</span></div>';
+      html += '<div class="row"><span class="label">URL:</span> ' + location.href.substring(0, 120) + '</div>';
+
+      // 2. CSS loaded?
+      var heroBg = '';
+      try {
+        var heroEl = document.querySelector('.hero');
+        if (heroEl) {
+          var cs = window.getComputedStyle(heroEl);
+          heroBg = cs.backgroundColor;
+          var hasStyles = cs.minHeight !== '0px' && cs.display !== 'inline';
+          html += '<div class="row"><span class="label">CSS loaded:</span> <span class="' +
+            (hasStyles ? 'ok">YES' : 'err">NO — style.css not loaded!') + '</span></div>';
+        }
+      } catch(e) {
+        html += '<div class="row"><span class="label">CSS check error:</span> <span class="err">' + e.message + '</span></div>';
+      }
+
+      // 3. JS errors
+      html += '<div class="row"><span class="label">JS errors caught:</span> <span class="' +
+        (window.__debugErrors.length === 0 ? 'ok">' : 'err">') +
+        window.__debugErrors.length + '</span></div>';
+      window.__debugErrors.forEach(function(err, i) {
+        html += '<div class="row" style="padding-left:20px;"><span class="err">Error ' + (i+1) + ':</span> ' +
+          err.message + '<br><span style="color:#666;padding-left:20px;">' + err.source + '</span></div>';
+      });
+
+      // 4. DOM content checks
+      var checks = [
+        { sel: '[data-i18n="hero.title"]', label: 'Hero title text' },
+        { sel: '[data-i18n="hero.subtitle"]', label: 'Hero subtitle text' },
+        { sel: '#navLinks', label: 'Nav links count', check: function(el) { return el.children.length + ' links'; } },
+        { sel: '#cultureContent', label: 'Culture content', check: function(el) { return el.children.length + ' child elements'; } },
+        { sel: '#patternGrid', label: 'Pattern grid', check: function(el) { return el.children.length + ' cards'; } },
+        { sel: '#soundList', label: 'Sound list', check: function(el) { return el.children.length + ' entries'; } },
+        { sel: '#objectGrid', label: 'Object grid', check: function(el) { return el.children.length + ' items'; } },
+        { sel: '#customCards', label: 'Custom cards', check: function(el) { return el.children.length + ' cards'; } },
+        { sel: '#peopleGrid', label: 'People grid', check: function(el) { return el.children.length + ' profiles'; } },
+        { sel: '#productGrid', label: 'Product grid', check: function(el) { return el.children.length + ' products'; } },
+        { sel: '#aboutList', label: 'About list', check: function(el) { return el.children.length + ' items'; } },
+        { sel: '.footer-text', label: 'Footer text' }
+      ];
+
+      html += '<div class="row" style="margin-top:8px;"><strong class="info">--- DOM Content Check ---</strong></div>';
+      checks.forEach(function(c) {
+        var el = document.querySelector(c.sel);
+        if (!el) {
+          html += '<div class="row"><span class="label">' + c.label + ':</span> <span class="err">ELEMENT NOT FOUND</span></div>';
+        } else {
+          var content = c.check ? c.check(el) : (el.textContent ? '"' + el.textContent.substring(0, 60) + '"' : '<EMPTY>');
+          var cls = content === '<EMPTY>' ? 'warn' : 'ok';
+          html += '<div class="row"><span class="label">' + c.label + ':</span> <span class="' + cls + '">' + content + '</span></div>';
+        }
+      });
+
+      // 5. Fade-in status
+      var allFadeIn = document.querySelectorAll('.fade-in');
+      var visibleFadeIn = document.querySelectorAll('.fade-in.visible');
+      var hiddenFadeIn = allFadeIn.length - visibleFadeIn.length;
+      html += '<div class="row" style="margin-top:8px;"><strong class="info">--- Fade-in Status ---</strong></div>';
+      html += '<div class="row"><span class="label">Total fade-in elements:</span> ' + allFadeIn.length + '</div>';
+      html += '<div class="row"><span class="label">Visible (.visible):</span> <span class="ok">' + visibleFadeIn.length + '</span></div>';
+      html += '<div class="row"><span class="label">Still hidden:</span> <span class="' +
+        (hiddenFadeIn > 0 ? 'warn' : 'ok') + '">' + hiddenFadeIn + '</span></div>';
+
+      // 6. Hero visibility
+      html += '<div class="row" style="margin-top:8px;"><strong class="info">--- Hero Section ---</strong></div>';
+      try {
+        var hero = document.querySelector('.hero');
+        var hcs = window.getComputedStyle(hero);
+        html += '<div class="row"><span class="label">Hero min-height:</span> ' + hcs.minHeight + '</div>';
+        html += '<div class="row"><span class="label">Hero display:</span> ' + hcs.display + '</div>';
+        html += '<div class="row"><span class="label">Hero bg-color:</span> ' + hcs.backgroundColor + '</div>';
+        html += '<div class="row"><span class="label">Hero offsetHeight:</span> ' + hero.offsetHeight + 'px</div>';
+        var heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+          var hccs = window.getComputedStyle(heroContent);
+          html += '<div class="row"><span class="label">Hero-content opacity:</span> ' + hccs.opacity + '</div>';
+          html += '<div class="row"><span class="label">Hero-content visibility:</span> ' + hccs.visibility + '</div>';
+          html += '<div class="row"><span class="label">Hero-content display:</span> ' + hccs.display + '</div>';
+        }
+      } catch(e) {
+        html += '<div class="row"><span class="err">Hero check error: ' + e.message + '</span></div>';
+      }
+
+      panel.innerHTML = html;
+    }
+
+    // Run diagnostics after app.js finishes
+    window.addEventListener('load', function() {
+      setTimeout(updateDebugPanel, 500);
+      setTimeout(updateDebugPanel, 3000);
+    });
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+{
+  "nav": {
+    "brand": "Staying Bifzixkar",
+    "links": [
+      { "id": "hero", "label": "首页" },
+      { "id": "culture", "label": "文化介绍" },
+      { "id": "weave", "label": "织·西兰卡普" },
+      { "id": "sound", "label": "声·方言与歌" },
+      { "id": "object", "label": "物·日常器物" },
+      { "id": "custom", "label": "俗·习俗与禁忌" },
+      { "id": "people", "label": "人·当代土家人" },
+      { "id": "products", "label": "周边产品" },
+      { "id": "about", "label": "项目说明" }
+    ],
+    "langSwitch": "EN"
+  },
+  "hero": {
+    "title": "Staying Bifzixkar",
+    "subtitle": "一部活着的土家族文化档案",
+    "tagline": "何雨珂 · 社群倡议",
+    "description": "\"毕兹卡\"（Bifzixkar）是土家族的自称，意为\"本地人\"。这里的内容由本地人定义，而非为外来观看者表演。",
+    "ctaPrimary": "探索档案",
+    "ctaSecondary": "支持手艺人"
+  },
+  "culture": {
+    "sectionTitle": "项目背景与问题意识",
+    "sectionSubtitle": "Project Background",
+    "paragraphs": [
+      {
+        "text": "本项目起于一个在恩施反复可见的困境：土家族年轻人面临的选择空间极度收窄——留在当地，意味着进入旅游服务业，以低薪换取被凝视的位置；离开去城市，则意味着与文化根脉的断裂。两条路之间，没有第三条。"
+      },
+      {
+        "text": "与此同时，土家族文化正在以一种特定方式\"被保存\"：织锦纹样变成景区装饰，梯玛仪式变成节庆节目，哭嫁歌变成舞台表演。这些保存的结果是文化形式的留存，却是文化意义的空洞化。"
+      },
+      {
+        "text": "Staying Bifzixkar 试图提供另一种可能：让本地年轻人成为自己文化的记录者与叙述者，同时通过文化周边产品的销售创造实际经济收益，使\"留在家乡\"成为一个有尊严、有可持续收入的选择。"
+      }
+    ],
+    "orientation": {
+      "title": "项目定位",
+      "paragraphs": [
+        "Staying Bifzixkar 是一个数字民族志档案网站，同时连接一个以土家族织物纹样为核心的文化周边商店。两个部分相互支撑：档案是周边产品的内容来源与叙事依据，周边产品是档案可持续运营的经济基础。",
+        "档案不以\"展示民族文化\"为目的，而以\"记录真实生活经验\"为导向——包括正在消失的、被误解的、从未被讲述的部分。周边产品面向城市年轻消费者与设计圈，定位为生活方式产品，而非旅游纪念品。"
+      ]
+    }
+  },
+  "weave": {
+    "sectionTitle": "织·西兰卡普",
+    "sectionSubtitle": "Weave · Xilankapu",
+    "description": "记录西兰卡普织锦纹样的图案、色彩与象征含义。每一个纹样条目包含：图案来源、制作者口述、纹样在历史与日常中的使用场合。这一模块同时作为周边产品的图案数据库。",
+    "patterns": [
+      {
+        "name": "单八勾",
+        "nameEn": "Single Eight-Branch Hook",
+        "tujiaName": "土家语：谢谢",
+        "image": "images/weave/danbagou.jpg",
+        "symbolism": "平安、团圆、财富、光明、丰饶、顺利。对土家族人民而言：温暖、光明、生命和力量。",
+        "oralHistory": "蜘蛛崇拜：土家族的原始信仰和神话传说中，蜘蛛是拯救民族于危难的吉祥物。传说一只蜘蛛在洞口结网，掩护了躲避追兵的土家族先民，使其得以幸存和繁衍。因此，蜘蛛纹样被视为护身符，寓意辟邪消灾、保佑平安。\"八\"在中国文化中本身就有\"发\"（发展、发财）的吉祥寓意，也代表着四面八方，有圆满、周全之意。"
+      },
+      {
+        "name": "阳雀花",
+        "nameEn": "Sparrow Flower",
+        "tujiaName": "",
+        "image": "images/weave/yangquehua.jpg",
+        "symbolism": "守护平安丰收、家庭和睦、吉祥祈福。对土家族人民而言：\"报春的天使\"。",
+        "oralHistory": "\"西兰的化身\"：西兰因为痴迷织锦技艺被误解而亡化做阳雀鸟，每年春分时期啼鸣催促农耕，象征着对技艺与自然的忠诚，也赋予了对织锦技艺的守护和传承。\"亲情与爱情的象征\"：阳雀鸟的啼鸣声\"归归阳\"在土家语中意为\"呼唤贵阳\"，源于一对兄弟情深的故事：弟弟贵双为寻找被母后虐待致死的兄长贵阳，化作阳雀鸟，啼血呼唤。使得阳雀鸟成为亲情与忠贞的象征，寄托了土家人对家庭和睦的向往。"
+      },
+      {
+        "name": "四十八勾",
+        "nameEn": "Forty-Eight Hooks",
+        "tujiaName": "",
+        "image": "images/weave/sibashigou.jpg",
+        "symbolism": "吉祥、顺利互助、驱秽辟邪、消灾纳吉、祈子求昌。对土家族人民而言：\"多子多福，子孙昌盛\"。",
+        "oralHistory": "\"太阳与生命的崇拜\"：\"四十八勾\"常被解读为太阳和火焰的象征，暗含土家族人对生命繁衍与永续的渴望。其放射状的勾纹结构类似太阳光芒，寓意光明、温暖和族群繁荣。\"族群团结与吉祥寓意\"：勾纹的层层相连、环环相扣，象征族人紧密团结与生生不息。在婚俗文化中，\"四十八勾\"常用于嫁衣或婚庆织锦，既寄托驱邪纳吉的愿望，也隐喻婚姻的稳固与多子多福。"
+      },
+      {
+        "name": "茅古斯",
+        "nameEn": "Maogusi",
+        "tujiaName": "",
+        "image": "images/weave/maogusi.jpg",
+        "symbolism": "人丁兴旺、五谷丰收、驱邪祈福、生命力顽强、坚韧不拔。对土家族人民而言：\"人与自然共生，生殖崇拜\"。",
+        "oralHistory": "\"生殖崇拜与生命哲学\"：\"茅古斯\"直观的肢体语言，将生殖崇拜融入祭祀仪式。例如《甩火把》中，\"粗鲁棍\"被视为生命力的象征，舞者通过动作传递对族群繁行的渴望。\"茅古斯与猎神的传说\"：\"茅古斯\"与土家族对猎神\"梅山\"的崇拜密切相关。传说中，梅山是一位为除虎患而牺牲的女猎手，因其裸体而羞愤跳崖，后人以草把代其神像祭祀。"
+      },
+      {
+        "name": "椅子花",
+        "nameEn": "Chair Flower",
+        "tujiaName": "土家语：克毕卡",
+        "image": "images/weave/yizihua.jpg",
+        "symbolism": "椅子花开，子孙满堂、温馨幸福、权利、家族繁衍兴旺。对土家族人民而言：新娘嫁妆有没有椅子花织锦，直接显示女方家族的地位和织女水平。",
+        "oralHistory": "\"太师椅的符号转化\"：椅子花纹样原型源于土司时期象征权力的太师椅。在土司统治结构中，椅子是土王权威的具象载体。织女将太师椅的平面形态解构为几何模块。\"十人织九垮的技艺神话\"：湘西流传故事：土司命织女百日织出\"天神御座纹\"，一女子熬夜织锦时遇山鬼，以头发换得鬼斧神工之术。次日锦成惊艳四方，女子却白发尽落。从此椅子花便与\"以命换艺\"的悲壮感绑定。"
+      },
+      {
+        "name": "粑粑架",
+        "nameEn": "Baba Rack",
+        "tujiaName": "\"烤糯糍粑的工具\"",
+        "image": "images/weave/babajia.jpg",
+        "symbolism": "食禄满盘、家宅平安、事业糕蒸、财源滚滚、五谷丰登。对土家族人民而言：\"器物衍生\"，将最平凡的劳动工具升华为族群精神图腾。",
+        "oralHistory": "粑粑架是土家人用来烧烤糯糍粑时的一种铁质工具。其状有三脚半月形和四脚方形，置放粑粑的烤面多为\"牛眼睛\"或菱形图案。《粑粑架》的织纹来源于真实的生活，同时又艺术地表现了生活。《粑粑架纹》就是由无数菱形方眼组成的一幅律动感很强的作品，色彩丰富明丽、工艺精湛大气。"
+      },
+      {
+        "name": "锯齿花",
+        "nameEn": "Sawtooth Flower",
+        "tujiaName": "土家语：泽卡毕兹（意为刀锋纹）",
+        "image": "images/weave/juchihua.jpg",
+        "symbolism": "开垦的坚韧、震慑邪崇、以锐破厄、力量与守护。对土家族人民而言：用经纬线锻造的生存宣言！",
+        "oralHistory": "\"自然与生存的锐化\"：它是劈开荆棘的生存之刃，铭刻族群与自然的搏斗。齿峰与齿谷的交替，诠释土家族\"向死而生\"的价值观。锯齿角度严格保持52°，与鄂西出土战国青铜钺刃角一致，暗喻土家族历史上\"以锐破厄\"的战斗精神。\"织机上的生死博弈\"：技艺难度位列土家织锦\"三大难纹\"之一，高密度锯齿纹需挑纬15万次，清代文献记载其成品率仅9%。"
+      },
+      {
+        "name": "桶盖花",
+        "nameEn": "Bucket Lid Flower",
+        "tujiaName": "土家语：桶巴堵咱（意为桶盖子）",
+        "image": "images/weave/tonggaihua.jpg",
+        "symbolism": "吉祥、富贵、家财万贯、财富积累、丰收。对土家族人民而言：对自然的感激之情。",
+        "oralHistory": "木桶一般有一对\"耳朵\"，其盖合成，刚好成两个缺口，以便衔往桶的两只耳朵。此锦配以各种色彩和适宜边框。桶盖花取材于日常生活器物，因形似民间装米用的扁形木桶盖而得名。桶盖花一扁形变体菱形为主体，组成了繁复和大小相同的图案，设色约丽典雅，编织精美，这是土家妇女长期观察生活的结果。寓意：家藏万贯而不流露。"
+      },
+      {
+        "name": "凤穿牡丹",
+        "nameEn": "Phoenix Through Peony",
+        "tujiaName": "",
+        "image": "images/weave/fengchuanmudan.jpg",
+        "symbolism": "吉祥富贵、人丁兴旺、平安顺遂、雍容华贵。对土家族人民而言：牡丹居中，双凤向对翩飞，虽然抽象，但极具动态之美。",
+        "oralHistory": "土家族古歌《摆手歌》中记载，凤凰是巴人迁徙途中的引路神鸟，指引族群找到栖身之所。而牡丹作为武陵山区常见花卉，象征土地肥沃与丰收。凤穿牡丹纹样的形成，是巴人图腾记忆与楚地花卉崇拜融合的产物，既承载族群迁徙的历史记忆，也表达对定居生活的珍视。"
+      },
+      {
+        "name": "梅花纹",
+        "nameEn": "Plum Blossom",
+        "tujiaName": "土家语：朋友们（阿哥得）",
+        "image": "images/weave/meihuawen.jpg",
+        "symbolism": "传春报喜、吉祥平安、幸福、美好、如意、一帆风顺。对土家族人民而言：激励人面对逆境时要坚持，坚持不懈，总有柳暗花明。",
+        "oralHistory": "宝剑锋从磨砺出，梅花香自苦寒来。梅花象征着冰清玉洁，是土家人心中的花魁，有梅花报春之寓意。梅花花团锦簇，以九朵为最，极具写意。同时，斜向排列着菱形九朵梅花主体纹样，并以红色为底色，更加热烈喜庆。"
+      },
+      {
+        "name": "老鼠娶亲",
+        "nameEn": "Mouse Wedding",
+        "tujiaName": "土家语：晚安（难次踩擦）",
+        "image": "images/weave/laoshuquqin.jpg",
+        "symbolism": "家宅安宁、五谷丰登。对土家族人民而言：对美好生活的执着追求。",
+        "oralHistory": "相传正月初三晚上是\"老鼠娶亲\"的大日子，会听到老鼠吱吱叫的声音。为了不打扰老鼠娶亲的好事，在该晚都会尽量提早熄灯就寝，并且在家中的厨房或老鼠常出入的角落，撒上一些米盐、糕饼与老鼠共享新婚的欢乐和年来的收成，这些东西俗称\"米妆\"，或称\"老鼠分钱\"，希望与老鼠打好交道以求今年的鼠害少一些。"
+      }
+    ]
+  },
+  "sound": {
+    "sectionTitle": "声·方言与歌",
+    "sectionSubtitle": "Sound · Dialect & Songs",
+    "description": "采集正在消失的土家语词汇、哭嫁歌片段、摆手歌唱腔、梯玛仪式唱腔等声音材料。每条音频配以发音者的身份背景与使用语境，记录的重点不是\"标准版本\"，而是特定人、特定时间、特定场合下的真实发声。",
+    "entries": [
+      {
+        "category": "梯玛歌",
+        "performer": "彭继龙，土家族，湖南龙山人，国家级非物质文化遗产代表性项目土家族梯玛歌代表性传承人。",
+        "description": "\"梯\"在土家族的意思是\"敬神\"，\"玛\"的意思是\"人们\"，\"梯玛\"就是\"敬神的人们\"。梯玛又称为\"土老司\"，是土家族中的宗教职业者，负责祭祀活动并且兼修医术。\"梯玛歌\"是土家族长篇史诗，以\"梯玛日\"仪式为实践载体，世代口耳相传，集诗、歌、乐、舞为一体，表现开天辟地、人类繁衍、民族祭祀、民族迁徙、狩猎农耕及饮食起居等历史和社会生活内容。",
+        "audio": "videos/timage.mp4",
+        "audioNote": "彭继龙综述片（还需再补充完善）"
+      },
+      {
+        "category": "哭嫁",
+        "performer": "",
+        "description": "女人在结婚前7-20天就开始哭，有的哭一个多月，至少三五天。婚礼歌曲有哭父母、哭哥哥嫂子、哭叔叔、哭姐姐、哭媒人、哭梳头、哭戴花、哭告别爸爸妈妈、哭祭祖、哭上轿子等。开始轻声唱歌，越接近结婚的日子越难过。哭声伴随着铜锣声、鞭炮声，场面非常震撼。哭嫁不是嚎啕大哭，而是要哭得好听，哭得感人，哭得让人共情。",
+        "audio": "",
+        "audioNote": "待采集"
+      },
+      {
+        "category": "摆手舞",
+        "performer": "张明光，土家族，湖南龙山人，国家级非物质文化遗产项目土家族摆手舞代表性传承人。摆手舞第二十五代掌堂师。",
+        "description": "摆手舞，土家语称为\"舍巴\"、\"舍巴格痴\"，意为敬神跳，是一种祭祀性舞蹈。其特点是摆边手，躬腰屈膝，以身体扭动带动手的甩动，表演内容多为生产生活动作，以狩猎、农事、军事和社会生活为主要表现内容，表演中歌、乐、舞浑然一体，间有锣鼓伴奏和摆手歌穿唱。摆手舞最大特征在于甩同边手、走同边脚。",
+        "audio": "videos/baishouwu.mp4",
+        "audioNote": "土家族摆手舞（还需再补充完善）"
+      }
+    ]
+  },
+  "object": {
+    "sectionTitle": "物·日常器物",
+    "sectionSubtitle": "Object · Daily Artifacts",
+    "description": "记录土家族日常生活中的具体物件——农具、食器、节庆用品、家族传物等。每件物品配有持有者的口述：这个东西从哪里来，曾经用来做什么，现在放在哪里，是否还在使用。",
+    "items": [
+      { "name": "石磨", "image": "images/object/shimo.jpg", "usage": "把玉米粒磨成粉，荷叶包苞谷粑粑，蒸了吃，当地村民的主食", "location": "村民厨房里", "status": "在用" },
+      { "name": "蓑衣", "image": "images/object/suoyi.jpg", "usage": "下雨天，村民穿着去地里干活", "location": "挂在屋子外屋檐下面的墙上", "status": "不用" },
+      { "name": "火架子", "image": "images/object/huojiazi.jpg", "usage": "山区潮湿，冬天大家围坐着烤火用，上面可以放水壶或烤物，屋顶板有挂钩，挂着腊肉，兼具烤火和熏肉的功能", "location": "堂屋正中间", "status": "在用" },
+      { "name": "背篓", "image": "images/object/beilou.jpg", "usage": "村民下地干活，背农产品进集市", "location": "放在屋内或屋外屋檐下", "status": "在用" },
+      { "name": "药碾子", "image": "images/object/yaonianzi.jpg", "usage": "用于捻碎草药。彭家寨人靠山吃饭，山上有很多草药，村民会上山采", "location": "在存储室", "status": "在用" },
+      { "name": "犁地耙", "image": "images/object/lidiba.jpg", "usage": "村民下地干活，犁地用", "location": "放在屋外屋檐下", "status": "不用" },
+      { "name": "酒坛子", "image": "images/object/jiutanzi.jpg", "usage": "盛酒用的坛子", "location": "屋内厨房", "status": "在用" },
+      { "name": "婚床", "image": "images/object/hunchuang.jpg", "usage": "老式新人结婚用的婚床", "location": "老房子里", "status": "不用了，村子里现在年轻人很少了" },
+      { "name": "风斗", "image": "images/object/fengdou.jpg", "usage": "吹晒干的稻子", "location": "储藏间", "status": "不用" },
+      { "name": "篱耙", "image": "images/object/liba.jpg", "usage": "耙屋外场地上晾晒的玉米", "location": "屋檐下", "status": "在用" },
+      { "name": "摔碗", "image": "images/object/shuaiwan.jpg", "usage": "摔碗酒用的土碗，碗很小很浅，碗里的酒喝完摔地上", "location": "厨房内", "status": "在用" },
+      { "name": "晒篓", "image": "images/object/shailou.jpg", "usage": "山里交通不便，很多食物，比如山菌、豇豆都晾晒干，便于冬天食用。这是晾晒食物用的篓子", "location": "挂在储藏室的墙上", "status": "在用" },
+      { "name": "蜂蜜桶", "image": "images/object/fengmitong.jpg", "usage": "家家户户屋檐下都放着这样的桶，自然收集山上蜂蜜", "location": "屋檐下", "status": "在用" },
+      { "name": "窗棂雕刻", "image": "images/object/chuangling.jpg", "usage": "窗户装饰雕刻", "location": "窗户", "status": "在用" },
+      { "name": "门板", "image": "images/object/menban.jpg", "usage": "传统木门板", "location": "房门", "status": "在用" },
+      { "name": "压板", "image": "images/object/yaban.jpg", "usage": "老奶奶说这是压豆腐用的，村民自己种黄豆，会做豆皮。豆皮是村里的特色产品", "location": "挂在房间之间过道的墙上", "status": "在用" },
+      { "name": "腌缸", "image": "images/object/yangang.jpg", "usage": "村民自己腌咸菜", "location": "在厨房出来的过道上", "status": "在用" },
+      { "name": "犁具", "image": "images/object/liju.jpg", "usage": "犁地用的工具", "location": "放在屋外的墙角", "status": "不用" },
+      { "name": "灯具", "image": "images/object/dengju.jpg", "usage": "现在是通电的马灯", "location": "在房子过道里", "status": "在用" },
+      { "name": "舂", "image": "images/object/chong.jpg", "usage": "稻米用的，过节前村民会舂米，做糍粑", "location": "", "status": "不用" },
+      { "name": "吊炉", "image": "images/object/diaolu.jpg", "usage": "能上下调节高度，里面可以放玉米或土豆，烤东西吃", "location": "火塘屋子火堆上", "status": "在用" },
+      { "name": "盛篓", "image": "images/object/sheng lou.jpg", "usage": "储物", "location": "屋角", "status": "在用" }
+    ]
+  },
+  "custom": {
+    "sectionTitle": "俗·习俗与禁忌",
+    "sectionSubtitle": "Custom · Folkways & Taboos",
+    "description": "整理地方性的生活规则：节气习俗、饮食禁忌、建房讲究、婚丧仪式中的细节。这些内容大量存在于老人记忆中，从未被系统记录，也无法在非遗认定体系中找到位置。",
+    "customs": [
+      {
+        "title": "哭嫁",
+        "content": "女人在结婚前7-20天就开始哭，有的哭一个多月，至少三五天。婚礼歌曲有哭父母，哭哥哥嫂子，哭叔叔，哭姐姐，哭媒人，哭梳头，哭戴花，哭告别爸爸妈妈，哭祭祖，哭上轿子等。开始轻声唱歌，越接近结婚的日子越难过。诉说父母养育之恩、兄弟姐妹的深厚情谊和离别之感，或者是表达自己对未来生活的一种担心。女方在要出嫁的前一天和第二天上轿前哭嫁达到了高潮，哭声伴随着铜锣声，鞭炮声，场面非常震撼。哭嫁不是嚎啕大哭，乱哭一通，而是要哭的好听，哭的感人，哭的让人共情。"
+      },
+      {
+        "title": "拦门酒",
+        "subtitle": "最隆重的欢迎礼",
+        "content": "当你走进土家山寨或参加节庆时，常会遇到\"拦门酒\"。这是土家人待客的最高礼仪。身着盛装的阿哥阿妹会唱着山歌，端着米酒在寨门口迎接。通常要喝三碗（或三口），寓意\"三阳开泰\"。双手接过酒碗，沾唇示意并真诚道谢，赢得主人的欢笑与尊重。"
+      },
+      {
+        "title": "跳丧舞（撒叶儿嗬）",
+        "subtitle": "豁达的生命礼赞",
+        "content": "土家老人寿终正寝后，亲友会通宵达旦地跳\"撒叶儿嗬\"，用雄健的舞蹈和歌谣来送别亡者，庆祝其圆满的一生。这绝非悲伤，而是土家人\"欢欢喜喜送亡人\"的豁达生死观。若在旅行中偶遇，请保持肃穆与尊重，这是理解土家精神内核的珍贵窗口。"
+      },
+      {
+        "title": "女儿会",
+        "subtitle": "土家族的\"情人节\"",
+        "content": "每年农历七月十二，会举办盛大的\"女儿会\"。这天，土家姑娘会盛装出行，通过买卖货物、对唱山歌来寻觅意中人，大胆而浪漫。"
+      },
+      {
+        "title": "节气习俗：腊月忙年与刨汤宴",
+        "content": "彭家寨最隆重的节气习俗集中在腊月。每年腊月，寨子里会响起年猪的啼叫声，这是\"刨汤宴\"民俗盛宴的序曲。土家人遵循古礼，将新鲜猪肉烹制成热气腾腾的菜肴，摆开数十米长的长桌宴，土家姑娘唱着敬酒歌，以\"高山流水\"般的仪式将米酒倒入客人口中。寨子里，打糍的撞击声、烫豆皮的滋滋声、面舞的鼓点声交织在一起，构成土家古寨\"忙年\"的独特图景。土家族以4月8日、6月6日和土家年为主要节日，其中最隆重的是土家年，俗称\"过年\"。农历除夕，也叫椰年，是汉族人过年的前一天。大年为腊月二十九，小年为腊月二十八。那时候家家户户都会把新年猪杀了，匏汤饭。"
+      }
+    ],
+    "taboos": [
+      {
+        "title": "火塘神圣，不可冒犯",
+        "content": "在传统土家吊脚楼里，火塘是家庭中心，被视为祖先神灵所在。不能用脚踩踏火塘的三脚架，也不能朝火塘吐痰、扔污物。"
+      },
+      {
+        "title": "逢年过节忌说不祥的话",
+        "content": "喜事，切忌说不祥的话，多说吉利的话。过年期间禁止猫进屋，俗称\"猪来穷，狗来富，猫来穿丧服\"；祭祀时，也避开猫的气味，禁止猫靠近。"
+      },
+      {
+        "title": "饮食禁忌",
+        "content": "土家人忌讳食用已经死亡的动物，即\"不吃死物\"。新年忌鱼，农历新年期间忌食鱼，避不吉寓意。"
+      },
+      {
+        "title": "宴席礼仪",
+        "content": "老年人和尊贵的客人要优先照顾，年轻人需按顺序就餐以示尊重。在宴席上发表不当言论或行为被视为严重禁忌，以免给主人带来不悦。"
+      }
+    ],
+    "architecture": {
+      "title": "建房讲究",
+      "paragraphs": [
+        "彭家寨的吊脚楼建造遵循严格的传统规矩。材料只取阳坡杉木，正屋采用\"三柱四骑\"结构，象征天地人三才。\"吊脚楼全凭榫卯相连，不用一钉一铆，修旧如旧时必须用传统的榫卯结构修复，不动建筑筋骨。\"",
+        "建筑布局上，彭家寨依山就势，单户多为正屋三间、厢房吊层的格局，常以一正一横为主，一正两横的\"撮箕口\"为辅，与院坝相围成小庭院式，各自成为独立封闭的空间。",
+        "从宅基地的选择开始，除了通风向阳、防水离潮之外，还要讲究坐落方位，四围山向。选址、动工、山向，都要分别要与星宿、主人的生辰八字挂钩，按照阴阳五行相生相克的原理推算而定。彭家寨吊脚楼建筑体现建筑中\"天人合一\"的风水理念，遵循\"山环水抱，藏风聚气\"的风水原则。",
+        "吊脚楼按建筑结构来说，分为单吊式、双吊式和平地起吊式，以及一字吊。正屋一般在实地上，一侧或两侧的厢房会使用木结构撑起来，所以也叫半干栏式建筑。一般在一层放置农具、杂物和饲养牲畜，二层住人，三层用来放置粮食或储物。既防潮、防虫蛇，又利用了空间。吊脚楼这种穿斗式建筑，将立柱、梁柱，穿枋等部件通过榫卯结构连接，能通过整体协同卸力，起到良好的抗震作用。",
+        "建吊脚楼的木料来自于大山，土家人采木头的时候也有一些讲究，称作\"伐青山\"，一般选椿树或紫树，椿、紫因谐音\"春\"和\"子\"而吉祥。第二步是加工大梁及柱料，称为\"架大梁\"，在梁上画上八卦、太极图、荷花莲籽等图案。第三步叫\"排扇\"，即把加工好的梁柱接上榫头，排成木扇。第四步是\"立屋坚柱\"，主人选黄道吉日，请众乡邻帮忙，上梁前要祭梁。彭家寨子的吊脚楼窗花，大多简单的方子格，朴实大方。刷上用一种树产生的汁液进行熬制加工的土漆，既能够防腐防虫，又无毒无害。"
+      ]
+    },
+    "wedding_funeral": {
+      "title": "婚丧仪式",
+      "paragraphs": [
+        "土家族的婚姻习俗有明确的禁忌规则。亲属之间的通婚被严格禁止，特别是代际之间的通婚。婚配方位也有讲究，来自同一村寨或相邻村寨的人往往避而不娶，认为这样容易产生不和。",
+        "婚娶仪式上，双方家庭会进行复杂的讨价还价，这是对双方家庭地位的考量，流传着\"嫁人之前，先问封印\"的说法，意即确保家庭之间的地位和财力相匹配。",
+        "丧葬习俗方面，丧事期间家属不能外出，更不能参加喜庆活动以示哀悼。死者的遗物不可随意清理，特别是与死者生活密切相关的物品，清理过程需要非常小心。传统上会选择风水较好的地方安葬，正确的丧葬礼仪被认为能够确保亡灵安息。"
+      ],
+      "summary": "婚姻禁忌：禁止亲属通婚，同村寨避而不娶"
+    }
+  },
+  "people": {
+    "sectionTitle": "人·当代土家人",
+    "sectionSubtitle": "People · Contemporary Tujia",
+    "description": "记录今天真实生活中的土家族人——不是表演者，不是非遗传人，而是普通的年轻人、小商户、农业劳动者、留守者。每个人物条目以本人自述为主，记录他们如何在当代处境中理解自己与文化的关系。",
+    "profiles": [
+      {
+        "name": "彭茂林",
+        "age": "47岁",
+        "role": "返乡农家乐餐馆主",
+        "image": "images/people/pengmaolin.jpg",
+        "quote": "我是彭家寨人，媳妇是隔壁村的，这个房子我们自己家的。以前在外面打工。前年回来，不是因为情怀，是外面卷不动，干不动体力活了，家里老人身体也不行了，需要有人照顾。现在管着自家吊脚楼里开着的餐馆。游客量蛮大。游客来了，爱问'你们土家族现在还有什么特别的规矩吗？'我有时候会照着爷爷教我的，腊月杀年猪、打糍粑、唱敬酒歌。但说实话，我自己过年都不一定搞那么全了。我理解的文化，可能不再是那些必须遵守的'规矩'，而是一种…底色、本能？比如，我还是会忌讳正月里说不吉利的话。"
+      },
+      {
+        "name": "龙梅",
+        "age": "32岁",
+        "role": "寨口小超市老板娘",
+        "image": "images/people/longmei.jpg",
+        "quote": "我这家店，卖水、零食、纸巾，也卖点土家织锦的杯垫、小钱包，都是寨里婶娘们手作的。你说文化？我天天打交道的就是'钱'和'货'。外地游客来买织锦，总会问图案什么意思。我妈教过我，那是'台台花'，是保佑小孩的；那是'万字纹'，代表福气连绵。我现在解释这些，比卖货还顺溜。我女儿八岁，放学回来帮我看店，她会指着'卍'字说，'妈妈，这个我们美术书上也有'。我信我妈说的，经期不碰祭祀的东西，心里图个安稳。"
+      },
+      {
+        "name": "杨春秀",
+        "age": "49岁",
+        "role": "留守主妇",
+        "image": "images/people/yangchunxiu.jpg",
+        "quote": "我男人和儿子都在浙江打工，寨里像我这样的妇女，多了去了。我的生活就是这一日三餐，和逢年过节。清明、端午、月半（中元）、过年，再忙再累，该做的祭祀一点不能少。男人不在，我就代表家里上香、摆饭、烧纸。心里跟老祖宗说，保佑外面的人平安。我也知道，年轻人不信这个了。我女儿视频时说，'妈，你那套太麻烦了'。麻烦吗？是麻烦。但我不做，心里就空一块。你说这是文化还是迷信？我觉得是情分。是咱们土家人对自己人，从生到死的一套'照顾'。现在寨子成了景点，这份'照顾'还在我们这些留下的人手里攥着，没丢。"
+      },
+      {
+        "name": "彭老汉",
+        "age": "68岁",
+        "role": "种地兼管护古建筑",
+        "image": "images/people/penglaohan.jpg",
+        "quote": "我这一辈子，没离开过这山。年轻时跟着父辈学造吊脚楼，阳坡的杉木，三柱四骑，榫卯对榫卯，不用一根铁钉。现在没人盖新的了，我的活变成了'修旧的'，旅游局给钱，要求'修旧如旧'。老祖宗的规矩都在木头里。哪根梁能换，哪片瓦必须留着，我心里有本账。我老伴去世了，女儿结婚嫁出去了，但跟女婿在寨子口开个民宿，挺大的。我还种着地里的活，经济上完全没问题。"
+      }
+    ]
+  },
+  "products": {
+    "sectionTitle": "周边产品",
+    "sectionSubtitle": "Products",
+    "description": "西兰卡普是土家族女红文化的代表。这里所有产品以西兰卡普织锦纹样为核心视觉语言，定位为城市生活方式产品。每件产品页面链接对应的纹样条目，购买者可以看到这个图案背后的故事与来源。",
+    "categories": [
+      {
+        "name": "软性织物类",
+        "nameEn": "Soft Textiles",
+        "items": "帆布袋、茶巾、手提购物袋、手帕、围裙、杯垫（布面）"
+      },
+      {
+        "name": "家居软装类",
+        "nameEn": "Home Décor",
+        "items": "抱枕套、靠垫套、桌旗、床尾毯、玄关地垫"
+      },
+      {
+        "name": "户外与生活类",
+        "nameEn": "Outdoor & Living",
+        "items": "折叠钓鱼凳（凳面用织锦布）、户外野餐垫、渔夫帽（布面）、手腕包"
+      },
+      {
+        "name": "文具与小物类",
+        "nameEn": "Stationery & Accessories",
+        "items": "布面笔记本封面、织锦书签、布编钥匙扣、发带与发圈"
+      }
+    ],
+    "productList": [
+      { "id": 1, "name": "杯垫", "link": "https://s.taobao.com/search?q=西兰卡普杯垫", "price": "RMB 22.00", "image": "images/products/cuppad1.jpg" },
+      { "id": 2, "name": "鼠标垫", "link": "https://s.taobao.com/search?q=西兰卡普鼠标垫", "price": "RMB 22.00", "image": "images/products/mousepad1.jpg" },
+      { "id": 3, "name": "马克杯", "link": "https://s.taobao.com/search?q=傩戏面具马克杯", "price": "RMB 58.00", "image": "images/products/mug1.jpg" },
+      { "id": 4, "name": "橡皮擦", "link": "https://s.taobao.com/search?q=土家族白虎图腾橡皮擦", "price": "RMB 15.00", "image": "images/products/eraser1.jpg" },
+      { "id": 5, "name": "数据线", "link": "https://s.taobao.com/search?q=土家族数据线挂绳", "price": "RMB 38.00", "image": "images/products/cable1.jpg" },
+      { "id": 6, "name": "长袜子", "link": "https://s.taobao.com/search?q=西兰卡普棉袜长袜", "price": "RMB 12.80", "image": "images/products/socks1.jpg" },
+      { "id": 7, "name": "短袜子", "link": "https://s.taobao.com/search?q=西兰卡普虎头花短袜", "price": "RMB 12.80", "image": "images/products/socks2.jpg" },
+      { "id": 8, "name": "杯垫·八狮拾印", "link": "https://s.taobao.com/search?q=恩施西兰卡普杯垫", "price": "RMB 15.80", "image": "images/products/cuppad2.jpg" },
+      { "id": 9, "name": "杯垫·椅子花", "link": "https://s.taobao.com/search?q=恩施西兰卡普椅子花杯垫", "price": "RMB 15.80", "image": "images/products/cuppad3.jpg" },
+      { "id": 10, "name": "杯垫·双阳雀", "link": "https://s.taobao.com/search?q=西兰卡普双阳雀杯垫", "price": "RMB 15.80", "image": "images/products/cuppad4.jpg" },
+      { "id": 11, "name": "杯垫·阳雀花", "link": "https://s.taobao.com/search?q=西兰卡普阳雀花杯垫", "price": "RMB 38.00", "image": "images/products/cuppad5.jpg" },
+      { "id": 12, "name": "帆布袋·双阳雀", "link": "https://s.taobao.com/search?q=西兰卡普双阳雀斜挎包", "price": "RMB 89.80", "image": "images/products/bag1.jpg" },
+      { "id": 13, "name": "帆布袋·非遗织锦", "link": "https://s.taobao.com/search?q=非遗土家织锦斜挎包", "price": "RMB 128.00", "image": "images/products/bag2.jpg" },
+      { "id": 14, "name": "公文包", "link": "https://s.taobao.com/search?q=西兰卡普礼品公文包", "price": "RMB 298.00", "image": "images/products/bag3.jpg" },
+      { "id": 15, "name": "手提包·红色八勾", "link": "https://s.taobao.com/search?q=西兰卡普织锦手提包", "price": "RMB 498.00", "image": "images/products/bag4.jpg" },
+      { "id": 16, "name": "手提包·虎头花", "link": "https://s.taobao.com/search?q=西兰卡普虎头花手提包", "price": "RMB 498.00", "image": "images/products/bag5.jpg" },
+      { "id": 17, "name": "靠枕·八勾纹", "link": "https://s.taobao.com/search?q=西兰卡普靠枕八勾纹", "price": "RMB 258.00", "image": "images/products/pillow1.jpg" },
+      { "id": 18, "name": "靠枕·阳雀鸟纹", "link": "https://s.taobao.com/search?q=西兰卡普靠枕阳雀鸟", "price": "RMB 258.00", "image": "images/products/pillow2.jpg" },
+      { "id": 19, "name": "桌旗", "link": "https://s.taobao.com/search?q=西兰卡普桌旗茶席", "price": "RMB 89.00", "image": "images/products/tablecloth1.jpg" },
+      { "id": 20, "name": "鸭舌帽", "link": "https://s.taobao.com/search?q=土家族西兰卡普鸭舌帽", "price": "RMB 38.00", "image": "images/products/hat1.jpg" },
+      { "id": 21, "name": "折叠椅", "link": "https://s.taobao.com/search?q=西兰卡普户外折叠椅", "price": "RMB 7.50", "image": "images/products/chair1.jpg" },
+      { "id": 22, "name": "户外野餐垫", "link": "https://s.taobao.com/search?q=户外野餐垫防潮垫", "price": "RMB 15.80", "image": "images/products/mat1.jpg" },
+      { "id": 23, "name": "发箍", "link": "https://s.taobao.com/search?q=西兰卡普发箍", "price": "RMB 48.00", "image": "images/products/hairband1.jpg" },
+      { "id": 24, "name": "小镜子", "link": "https://s.taobao.com/search?q=非遗土家织锦小镜子", "price": "RMB 58.00", "image": "images/products/mirror1.jpg" },
+      { "id": 25, "name": "发带", "link": "https://s.taobao.com/search?q=西兰卡普手工编织发带", "price": "RMB 78.00", "image": "images/products/hairband2.jpg" },
+      { "id": 26, "name": "书签", "link": "https://s.taobao.com/search?q=西兰卡普书签非遗", "price": "RMB 48.00", "image": "images/products/bookmark1.jpg" }
+    ]
+  },
+  "about": {
+    "sectionTitle": "项目说明",
+    "sectionSubtitle": "About the Project",
+    "items": [
+      "所有档案条目经被记录者本人确认。",
+      "周边产品中使用的纹样取得原始织造者的明确授权。",
+      "收益分配机制在项目启动前以书面形式与参与者确认，透明、可查、可追溯。",
+      "项目不以\"保护濒危文化\"为外部宣传口径。",
+      "研究者的土家族身份是进入社区的资源，但不等于对社区所有成员经验的天然代言权。"
+    ]
+  },
+  "footer": {
+    "text": "Staying Bifzixkar · 一部活着的土家族文化档案",
+    "credit": "He Yuke · Community Initiative"
+  }
+}

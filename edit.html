@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staying Bifzixkar - Content Editor</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;background:#f0f2f5;color:#333}
+    .editor-layout{display:flex;height:100vh}
+    .sidebar{width:240px;background:#1a1a2e;color:#ccc;overflow-y:auto;flex-shrink:0}
+    .sidebar-header{padding:20px 16px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .sidebar-header h2{font-size:15px;color:#fff}
+    .sidebar-header p{font-size:11px;color:#666;margin-top:4px}
+    .nav-group{border-bottom:1px solid rgba(255,255,255,.05)}
+    .nav-item{display:block;width:100%;padding:9px 16px 9px 24px;border:none;background:none;color:#aaa;font-size:13px;text-align:left;cursor:pointer;transition:all .2s}
+    .nav-item:hover{background:rgba(255,255,255,.05);color:#ddd}
+    .nav-item.active{background:rgba(255,255,255,.1);color:#fff;border-right:3px solid #4a9eff}
+    .nav-parent{padding:9px 16px 9px 24px;color:#ddd;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:space-between}
+    .nav-parent:hover{background:rgba(255,255,255,.05)}
+    .nav-parent .arrow-nav{font-size:10px;transition:transform .2s;color:#666}
+    .nav-parent.expanded .arrow-nav{transform:rotate(90deg)}
+    .nav-children{display:none}
+    .nav-children.open{display:block}
+    .nav-children .nav-item{padding-left:40px;font-size:12px;color:#888}
+    .nav-children .nav-item:hover{color:#ddd}
+    .main-area{flex:1;display:flex;flex-direction:column;overflow:hidden}
+    .top-bar{display:flex;align-items:center;justify-content:flex-end;padding:12px 24px;background:#fff;border-bottom:1px solid #e0e0e0;flex-shrink:0;gap:12px}
+    .token-bar{display:flex;align-items:center;gap:8px;flex:1}
+    .token-bar input{padding:7px 12px;border:1px solid #d9d9d9;border-radius:6px;font-size:13px;width:320px;font-family:monospace}
+    .token-bar input:focus{outline:none;border-color:#4a9eff;box-shadow:0 0 0 2px rgba(74,158,255,.15)}
+    .btn-connect{padding:7px 16px;background:#1890ff;color:#fff;border:none;border-radius:6px;font-size:13px;cursor:pointer}
+    .btn-connect:hover{background:#096dd9}
+    .save-btn{padding:8px 24px;background:#52c41a;color:#fff;border:none;border-radius:6px;font-size:14px;cursor:pointer}
+    .save-btn:hover{background:#389e0d}
+    .content-area{flex:1;overflow-y:auto;padding:24px;max-width:960px}
+    .section-header{margin-bottom:20px}
+    .section-header h2{font-size:22px;color:#1a1a2e}
+    .fg{margin-bottom:14px}
+    .fg label{display:block;font-size:12px;color:#666;margin-bottom:4px;font-weight:600}
+    .fg input,.fg textarea{width:100%;padding:8px 12px;border:1px solid #d9d9d9;border-radius:6px;font-size:14px;font-family:inherit;transition:border-color .2s}
+    .fg input:focus,.fg textarea:focus{outline:none;border-color:#4a9eff;box-shadow:0 0 0 2px rgba(74,158,255,.15)}
+    .fg textarea{min-height:80px;resize:vertical;line-height:1.6}
+    .bf-wrap{display:flex;gap:12px;margin-bottom:14px}
+    .bf-wrap .fg{flex:1;margin-bottom:0}
+    .bf-wrap .zh-label{color:#1890ff}
+    .bf-wrap .en-label{color:#52c41a}
+    .img-field{display:flex;gap:8px;align-items:flex-start;margin-bottom:14px}
+    .img-field input{flex:1;padding:8px 12px;border:1px solid #d9d9d9;border-radius:6px;font-size:14px;font-family:inherit}
+    .img-field input:focus{outline:none;border-color:#4a9eff;box-shadow:0 0 0 2px rgba(74,158,255,.15)}
+    .btn-upload{padding:8px 16px;background:#722ed1;color:#fff;border:none;border-radius:6px;font-size:13px;cursor:pointer;white-space:nowrap;flex-shrink:0}
+    .btn-upload:hover{background:#531dab}
+    .img-preview{width:80px;height:80px;border-radius:6px;border:1px solid #e8e8e8;object-fit:cover;margin-top:8px;display:block}
+    .fr{display:flex;gap:12px}
+    .fr .fg{flex:1}
+    .card{background:#fff;border:1px solid #e8e8e8;border-radius:8px;margin-bottom:12px;overflow:hidden}
+    .card-h{display:flex;align-items:center;padding:12px 16px;background:#fafafa;cursor:pointer;border-bottom:1px solid #f0f0f0}
+    .card-h:hover{background:#f0f0f0}
+    .card-t{font-size:14px;font-weight:600;color:#333;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .card-b{padding:16px}
+    .card.collapsed .card-b{display:none}
+    .arrow{transition:transform .2s;font-size:12px;color:#999;margin-left:8px}
+    .card.collapsed .arrow{transform:rotate(-90deg)}
+    .btn-del{padding:4px 10px;background:#ff4d4f;color:#fff;border:none;border-radius:4px;font-size:12px;cursor:pointer;margin-left:8px;flex-shrink:0}
+    .btn-del:hover{background:#cf1322}
+    .btn-add{display:inline-block;padding:8px 20px;background:#1890ff;color:#fff;border:none;border-radius:6px;font-size:13px;cursor:pointer;margin-top:8px}
+    .btn-add:hover{background:#096dd9}
+    .divider{border:none;border-top:1px dashed #e0e0e0;margin:20px 0}
+    .sub-title{font-size:15px;font-weight:600;color:#555;margin:16px 0 12px;padding-bottom:8px;border-bottom:2px solid #4a9eff}
+    .toast{position:fixed;top:20px;right:20px;padding:12px 24px;border-radius:8px;font-size:14px;z-index:10000;transition:opacity .3s}
+    .toast.success{background:#f6ffed;border:1px solid #b7eb8f;color:#52c41a}
+    .toast.error{background:#fff2f0;border:1px solid #ffccc7;color:#ff4d4f}
+    .modal-ov{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:5000;align-items:center;justify-content:center}
+    .modal-ov.active{display:flex}
+    .modal-box{background:#fff;border-radius:12px;padding:24px;max-width:500px;width:90%;max-height:80vh;overflow-y:auto}
+    .modal-box h3{margin-bottom:16px}
+    .modal-acts{display:flex;gap:8px;justify-content:flex-end;margin-top:20px}
+    .modal-acts button{padding:8px 20px;border-radius:6px;border:none;cursor:pointer;font-size:14px}
+    .btn-ok{background:#ff4d4f;color:#fff}
+    .btn-no{background:#f0f0f0;color:#333}
+    .lb{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);z-index:6000;align-items:center;justify-content:center;cursor:pointer}
+    .lb.active{display:flex}
+    .lb img{max-width:90%;max-height:90%}
+  </style>
+</head>
+<body>
+<div class="editor-layout">
+  <div class="sidebar">
+    <div class="sidebar-header"><h2>Content Editor</h2><p id="saveStatus">未连接 GitHub</p></div>
+    <div id="sidebarNav"></div>
+  </div>
+  <div class="main-area">
+    <div class="top-bar">
+      <div class="token-bar">
+        <input type="password" id="ghToken" placeholder="GitHub Token (ghp_... 或 github_pat_...)">
+        <button class="btn-connect" onclick="connectGitHub()">连接</button>
+      </div>
+      <button class="save-btn" id="btnSave" onclick="saveAll()" style="display:none">提交到 GitHub</button>
+    </div>
+    <div class="content-area" id="contentArea"></div>
+  </div>
+</div>
+<div class="modal-ov" id="confirmModal">
+  <div class="modal-box"><h3 id="cfTitle">确认</h3><p id="cfMsg"></p>
+    <div class="modal-acts"><button class="btn-no" onclick="closeCf()">取消</button><button class="btn-ok" id="cfOk">确认删除</button></div>
+  </div>
+</div>
+<div class="lb" id="lightbox" onclick="this.classList.remove('active')"><img id="lbImg"></div>
+<script type="text/plain" id="appjs-template"></script>
+<script>
+// ============ GitHub Config ============
+var GH={
+  owner:'xuteng0627',
+  repo:'bifzixkar',
+  branch:'main',
+  basePath:'bifzixkar/js/app.js',
+  token:''
+};
+var GH_API='https://api.github.com/repos/'+GH.owner+'/'+GH.repo;
+var GH_RAW='https://raw.githubusercontent.com/'+GH.owner+'/'+GH.repo+'/'+GH.branch+'/bifzixkar';
+
+// ============ State ============
+var S={section:'hero',zh:null,en:null,sha:null};
+
+// ============ GitHub API Helpers ============
+function ghFetch(path){
+  return fetch(GH_API+'/contents/'+path+'?ref='+GH.branch,{
+    headers:{'Authorization':'token '+GH.token,'Accept':'application/vnd.github.v3+json'},
+    cache:'no-store'
+  }).then(function(r){
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    return r.json();
+  });
+}
+
+function ghPut(path,content,message,sha){
+  var body={message:message,content:content,branch:GH.branch};
+  if(sha)body.sha=sha;
+  return fetch(GH_API+'/contents/'+path,{
+    method:'PUT',
+    headers:{
+      'Authorization':'token '+GH.token,
+      'Accept':'application/vnd.github.v3+json',
+      'Content-Type':'application/json'
+    },
+    body:JSON.stringify(body)
+  }).then(function(r){
+    if(!r.ok)return r.json().then(function(e){throw new Error(e.message||'HTTP '+r.status)});
+    return r.json();
+  });
+}
+
+function getAppJs(){
+  return fetch(GH_API+'/contents/'+GH.basePath+'?ref='+GH.branch+'&_t='+Date.now(),{
+    headers:{'Authorization':'token '+GH.token,'Accept':'application/vnd.github.v3+json'},
+    cache:'no-store'
+  }).then(function(r){
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    return r.json();
+  });
+}
+
+function putAppJs(content,sha){
+  var b64=btoa(unescape(encodeURIComponent(content)));
+  return ghPut(GH.basePath,b64,'Update app.js via editor',sha);
+}
+
+function putImage(subdir,fname,base64Data,sha){
+  var path='bifzixkar/'+subdir+'/'+fname;
+  return ghPut(path,base64Data,'Upload '+fname+' via editor',sha||null);
+}
+
+// ============ Init ============
+function init(){
+  renderNav();
+  var saved=localStorage.getItem('bifzixkar_gh_token');
+  if(saved){
+    document.getElementById('ghToken').value=saved;
+    GH.token=saved;
+    connectGitHub();
+  }else{
+    document.getElementById('contentArea').innerHTML='<div style="text-align:center;padding:60px;color:#999"><p style="font-size:16px;margin-bottom:20px">请输入 GitHub Token 连接仓库</p><p style="font-size:13px;color:#bbb">Token 会保存在浏览器本地，不会上传到任何地方</p></div>';
+  }
+}
+
+function connectGitHub(){
+  var token=document.getElementById('ghToken').value.trim();
+  if(!token){toast('请输入 GitHub Token',1);return}
+  GH.token=token;
+  document.getElementById('saveStatus').textContent='连接中...';
+  getAppJs().then(function(result){
+    S.sha=result.sha;
+    var bin=atob(result.content);
+    var bytes=new Uint8Array(bin.length);
+    for(var i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+    var content=new TextDecoder('utf-8').decode(bytes);
+    document.getElementById('appjs-template').textContent=content;
+    parseData(content);
+    document.getElementById('btnSave').style.display='';
+    document.getElementById('saveStatus').textContent='已连接 GitHub';
+    localStorage.setItem('bifzixkar_gh_token',token);
+  }).catch(function(e){
+    toast('连接失败: '+e.message,1);
+    document.getElementById('saveStatus').textContent='连接失败';
+  });
+}
+
+function parseData(t){
+  try{
+    S.zh=exD(t,'dataZh'); S.en=exD(t,'dataEn');
+    if(!S.zh||!S.en){toast('数据解析失败',1);return}
+    // Keep deep copies of TRUE original data (before sync) for merge-on-save
+    S._origZh=JSON.parse(JSON.stringify(S.zh));
+    S._origEn=JSON.parse(JSON.stringify(S.en));
+    // Sync array lengths at load time so zh/en stay aligned during editing
+    syncArrays(S.zh, S.en);
+    syncArrays(S.en, S.zh);
+    if(S.zh.hero)delete S.zh.hero.tagline;
+    if(S.en.hero)delete S.en.hero.tagline;
+    if(S.zh.footer)delete S.zh.footer.credit;
+    if(S.en.footer)delete S.en.footer.credit;
+    toast('数据加载成功！',0);
+    renderSection();
+  }catch(e){toast('解析失败: '+e.message,1)}
+}
+
+function exD(t,v){
+  var ps=['const '+v+' = {','let '+v+' = {','var '+v+' = {',v+' = {'];
+  var si=-1,m=null;
+  for(var i=0;i<ps.length;i++){si=t.indexOf(ps[i]);if(si>=0){m=ps[i];break}}
+  if(si<0)return null;
+  var d=0,ei=-1,ds=si+m.length-1;
+  for(var i=ds;i<t.length;i++){
+    var c=t[i];
+    if(c==='{')d++;
+    else if(c==='}'){d--;if(d===0){ei=i;break}}
+    if(c==='"'){i++;while(i<t.length&&t[i]!=='"'){if(t[i]==='\\')i++;i++}}
+    else if(c==="'"){i++;while(i<t.length&&t[i]!=="'"){if(t[i]==='\\')i++;i++}}
+    else if(c==='`'){i++;while(i<t.length&&t[i]!=='`'){if(t[i]==='\\')i++;i++}}
+  }
+  if(ei<0)return null;
+  var sub=t.substring(ds,ei+1);
+  try{return JSON.parse(sub)}catch(e){}
+  try{return (new Function('return '+sub))()}catch(e){return null}
+}
+
+// ============ Utilities ============
+function toast(m,e){var t=document.createElement('div');t.className='toast '+(e?'error':'success');t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.style.opacity='0';setTimeout(function(){t.remove()},300)},3000)}
+function switchSec(id){S.section=id;document.querySelectorAll('.nav-item').forEach(function(n){n.classList.toggle('active',n.dataset.s===id)});renderSection()}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function togCard(el){el.closest('.card').classList.toggle('collapsed')}
+function showCf(title,msg,cb){document.getElementById('cfTitle').textContent=title;document.getElementById('cfMsg').textContent=msg;document.getElementById('confirmModal').classList.add('active');document.getElementById('cfOk').onclick=function(){closeCf();cb()}}
+function closeCf(){document.getElementById('confirmModal').classList.remove('active')}
+function togNav(el){el.parentElement.querySelector('.nav-children').classList.toggle('open');el.classList.toggle('expanded')}
+
+// Navigate to nested object by dot-path
+function navObj(obj,path){
+  if(!obj)return null;
+  var parts=path.split('.');
+  for(var i=0;i<parts.length;i++)obj=obj[parts[i]];
+  return obj;
+}
+
+// Read field value from specific language data
+function gVal(lang,path,field){
+  var obj=navObj(lang==='zh'?S.zh:S.en,path);
+  return obj?(obj[field]||''):'';
+}
+
+// Write field value to specific language data
+function sVal(lang,path,field,val){
+  var obj=navObj(lang==='zh'?S.zh:S.en,path);
+  if(obj)obj[field]=val;
+}
+
+// Generic oninput handler
+function uf(el){
+  var lang=el.dataset.lang,p=el.dataset.p,f=el.dataset.f;
+  sVal(lang,p,f,el.value);
+}
+
+// Array item oninput (for paragraphs etc.)
+function ufArr(el){
+  var p=el.dataset.p,f=el.dataset.f,lang=el.dataset.lang,idx=parseInt(el.dataset.idx);
+  var obj=navObj(lang==='zh'?S.zh:S.en,p);
+  if(obj)obj[f][idx]=el.value;
+}
+
+// ============ Bilingual Field Generators ============
+function bfIN(labelZh,labelEn,path,field){
+  var h='<div class="bf-wrap">';
+  h+='<div class="fg"><label class="zh-label">'+labelZh+'</label><input data-lang="zh" data-p="'+path+'" data-f="'+field+'" value="'+esc(gVal('zh',path,field))+'" oninput="uf(this)"></div>';
+  h+='<div class="fg"><label class="en-label">'+labelEn+'</label><input data-lang="en" data-p="'+path+'" data-f="'+field+'" value="'+esc(gVal('en',path,field))+'" oninput="uf(this)"></div>';
+  h+='</div>';
+  return h;
+}
+function bfTA(labelZh,labelEn,path,field){
+  var h='<div class="bf-wrap">';
+  h+='<div class="fg"><label class="zh-label">'+labelZh+'</label><textarea data-lang="zh" data-p="'+path+'" data-f="'+field+'" oninput="uf(this)">'+esc(gVal('zh',path,field))+'</textarea></div>';
+  h+='<div class="fg"><label class="en-label">'+labelEn+'</label><textarea data-lang="en" data-p="'+path+'" data-f="'+field+'" oninput="uf(this)">'+esc(gVal('en',path,field))+'</textarea></div>';
+  h+='</div>';
+  return h;
+}
+// Side-by-side textarea (for shorter textareas)
+function bfTArow(labelZh,labelEn,path,field){
+  var h='<div class="bf-wrap">';
+  h+='<div class="fg"><label class="zh-label">'+labelZh+'</label><textarea style="min-height:60px" data-lang="zh" data-p="'+path+'" data-f="'+field+'" oninput="uf(this)">'+esc(gVal('zh',path,field))+'</textarea></div>';
+  h+='<div class="fg"><label class="en-label">'+labelEn+'</label><textarea style="min-height:60px" data-lang="en" data-p="'+path+'" data-f="'+field+'" oninput="uf(this)">'+esc(gVal('en',path,field))+'</textarea></div>';
+  h+='</div>';
+  return h;
+}
+// Bilingual array field (paragraphs etc.)
+function bfArrIN(labelZh,labelEn,path,field,idx){
+  var zhObj=navObj(S.zh,path),enObj=navObj(S.en,path);
+  var zhVal=zhObj?(zhObj[field][idx]||''):'';
+  var enVal=enObj?(enObj[field][idx]||''):'';
+  var h='<div class="bf-wrap">';
+  h+='<div class="fg"><label class="zh-label">'+labelZh+' '+(idx+1)+'</label><textarea data-lang="zh" data-p="'+path+'" data-f="'+field+'" data-idx="'+idx+'" oninput="ufArr(this)">'+esc(zhVal)+'</textarea></div>';
+  h+='<div class="fg"><label class="en-label">'+labelEn+' '+(idx+1)+'</label><textarea data-lang="en" data-p="'+path+'" data-f="'+field+'" data-idx="'+idx+'" oninput="ufArr(this)">'+esc(enVal)+'</textarea></div>';
+  h+='</div>';
+  return h;
+}
+
+// Shared (non-bilingual) text input — writes to both zh and en
+function sharedIN(label,path,field){
+  var val=gVal('zh',path,field)||gVal('en',path,field)||'';
+  var h='<div class="fg"><label>'+label+'</label>';
+  h+='<input data-p="'+path+'" data-f="'+field+'" value="'+esc(val)+'" oninput="ufShared(this)">';
+  h+='</div>';
+  return h;
+}
+// Shared array textarea with delete button (for paragraphs etc.)
+function sharedArrTA(label,path,field,idx){
+  var zhObj=navObj(S.zh,path);
+  var val=zhObj?(zhObj[field][idx]||''):'';
+  var h='<div class="fg" style="position:relative"><label>'+label+' '+(idx+1)+'</label>';
+  h+='<button class="btn-del" style="position:absolute;right:0;top:0;font-size:12px;padding:2px 10px" onclick="delSharedArr(\''+path+'\',\''+field+'\','+idx+')">删除</button>';
+  h+='<textarea data-lang="zh" data-p="'+path+'" data-f="'+field+'" data-idx="'+idx+'" oninput="ufSharedArr(this)">'+esc(val)+'</textarea>';
+  h+='</div>';
+  return h;
+}
+// oninput for shared array textarea — writes to both zh and en
+function ufSharedArr(el){
+  var p=el.dataset.p,f=el.dataset.f,idx=parseInt(el.dataset.idx),val=el.value;
+  var zhObj=navObj(S.zh,p),enObj=navObj(S.en,p);
+  if(zhObj)zhObj[f][idx]=val;
+  if(enObj)enObj[f][idx]=val;
+}
+// Delete shared array item
+function delSharedArr(path,field,idx){
+  showCf('删除','确认删除此条目？',function(){
+    var zhObj=navObj(S.zh,path),enObj=navObj(S.en,path);
+    if(zhObj)zhObj[field].splice(idx,1);
+    if(enObj)enObj[field].splice(idx,1);
+    renderSection();
+  });
+}
+
+// Shared (non-bilingual) image field with upload button
+function sharedImg(label,path,field){
+  var val=gVal('zh',path,field)||gVal('en',path,field)||'';
+  var fname=val.indexOf('/')>=0?val.substring(val.lastIndexOf('/')+1):val;
+  var h='<div class="fg"><label>'+label+'</label>';
+  h+='<div class="img-field">';
+  h+='<input data-p="'+path+'" data-f="'+field+'" value="'+esc(fname)+'" oninput="ufShared(this)" placeholder="输入文件名或点击上传">';
+  h+='<button class="btn-upload" onclick="uploadImg(this,\''+path+'\',\''+field+'\')">上传</button>';
+  h+='</div>';
+  if(fname){
+    h+='<img class="img-preview" data-src="'+esc(fname)+'" src="" onerror="this.style.display=\'none\'">';
+  }
+  h+='</div>';
+  return h;
+}
+
+// Map data path to image subdirectory
+function getImgSubdir(path){
+  if(path.indexOf('weave.patterns')===0) return 'images/weave';
+  if(path.indexOf('object.items')===0) return 'images/object';
+  if(path.indexOf('products')===0) return 'images/products';
+  return 'images';
+}
+
+// Upload image handler — commits to GitHub via API
+async function uploadImg(btn,path,field){
+  try{
+    if(!GH.token){toast('请先连接 GitHub',1);return}
+    if(!('showOpenFilePicker' in window)){toast('浏览器不支持文件选择，请用 Chrome/Edge',1);return}
+    var picked=await window.showOpenFilePicker({types:[{description:'Images',accept:{'image/*':['.jpg','.jpeg','.png','.gif','.webp','.svg']}}]});
+    var file=await picked[0].getFile();
+    var fname=file.name;
+    var subdir=getImgSubdir(path);
+    toast('正在上传到 GitHub...',0);
+    // Read file as base64
+    var reader=new FileReader();
+    reader.onload=async function(){
+      try{
+        var b64=reader.result.split(',')[1];
+        // Try to get existing SHA (for overwriting)
+        var existSha=null;
+        try{
+          var existing=await ghFetch('bifzixkar/'+subdir+'/'+fname);
+          existSha=existing.sha;
+        }catch(e){/* file doesn't exist yet, that's fine */}
+        // Upload to GitHub
+        await putImage(subdir,fname,b64,existSha);
+        // Write filename to BOTH zh and en data
+        sVal('zh',path,field,fname);
+        sVal('en',path,field,fname);
+        // Update input value
+        var input=btn.parentElement.querySelector('input');
+        if(input)input.value=fname;
+        // Show preview from GitHub raw URL
+        var preview=btn.parentElement.parentElement.querySelector('.img-preview');
+        if(preview){
+          preview.src=GH_RAW+'/'+subdir+'/'+fname+'?t='+Date.now();
+          preview.style.display='block';
+          preview.setAttribute('data-src',fname);
+        }
+        toast('已上传: '+fname,0);
+      }catch(e){
+        toast('上传失败: '+e.message,1);
+      }
+    };
+    reader.readAsDataURL(file);
+  }catch(e){
+    if(e.name!=='AbortError')toast('上传失败: '+e.message,1);
+  }
+}
+
+// Shared field oninput (writes to both zh and en)
+function ufShared(el){
+  var p=el.dataset.p,f=el.dataset.f,val=el.value;
+  sVal('zh',p,f,val);
+  sVal('en',p,f,val);
+}
+
+// Load all image previews from GitHub raw URLs
+function loadAllPreviews(){
+  var imgs=document.querySelectorAll('.img-preview[data-src]');
+  for(var i=0;i<imgs.length;i++){
+    var img=imgs[i];
+    var fname=img.getAttribute('data-src');
+    if(!fname) continue;
+    var input=img.parentElement.querySelector('input[data-p]');
+    if(!input) continue;
+    var path=input.getAttribute('data-p');
+    var subdir=getImgSubdir(path);
+    img.src=GH_RAW+'/'+subdir+'/'+fname;
+    img.style.display='block';
+  }
+}
+
+// ============ Navigation ============
+function renderNav(){
+  var n=document.getElementById('sidebarNav'),h='';
+  var topSecs=[
+    {id:'hero',l:'首页 Hero'},
+    {id:'projectBg',l:'项目背景'},
+    {id:'weave',l:'织·西兰卡普'}
+  ];
+  topSecs.forEach(function(s){
+    h+='<div class="nav-group"><button class="nav-item'+(S.section===s.id?' active':'')+'" data-s="'+s.id+'" onclick="switchSec(\''+s.id+'\')">'+s.l+'</button></div>';
+  });
+  // 俗 parent with children
+  var customOpen=S.section==='custom'||S.section==='customs'||S.section==='solarTerms'||S.section==='taboos'||S.section==='homeConstruction'||S.section==='weddingFuneral';
+  h+='<div class="nav-group">';
+  h+='<div class="nav-parent'+(customOpen?' expanded':'')+'" onclick="togNav(this);switchSec(\'custom\')"><span>俗·习俗与禁忌</span><span class="arrow-nav">&#9654;</span></div>';
+  h+='<div class="nav-children'+(customOpen?' open':'')+'">';
+  var subSecs=[
+    {id:'customs',l:'习俗'},
+    {id:'solarTerms',l:'节气'},
+    {id:'taboos',l:'禁忌'},
+    {id:'homeConstruction',l:'房屋建造'},
+    {id:'weddingFuneral',l:'婚丧仪式'}
+  ];
+  subSecs.forEach(function(s){
+    h+='<button class="nav-item'+(S.section===s.id?' active':'')+'" data-s="'+s.id+'" onclick="switchSec(\''+s.id+'\')">'+s.l+'</button>';
+  });
+  h+='</div></div>';
+  // More top-level sections
+  var moreSecs=[
+    {id:'object',l:'物·日常器物'},
+    {id:'sound',l:'声·方言与歌'},
+    {id:'people',l:'人·当代土家人'},
+    {id:'products',l:'文创产品'}
+  ];
+  moreSecs.forEach(function(s){
+    h+='<div class="nav-group"><button class="nav-item'+(S.section===s.id?' active':'')+'" data-s="'+s.id+'" onclick="switchSec(\''+s.id+'\')">'+s.l+'</button></div>';
+  });
+  document.getElementById('sidebarNav').innerHTML=h;
+}
+
+// ============ Section Router ============
+function renderSection(){
+  if(!S.zh||!S.en){document.getElementById('contentArea').innerHTML='<div style="text-align:center;padding:60px;color:#999">Loading...</div>';return}
+  var fn={hero:rHero,projectBg:rPB,weave:rWeave,custom:rCustomSec,customs:rCustoms,solarTerms:rSolar,taboos:rTaboos,homeConstruction:rHome,weddingFuneral:rWF,object:rObj,sound:rSnd,people:rPeople,products:rProd}[S.section];
+  if(fn)fn();
+  else document.getElementById('contentArea').innerHTML='<p>Unknown section</p>';
+  renderNav();
+  loadAllPreviews();
+}
+
+// ============ Hero ============
+function rHero(){
+  var h='<div class="section-header"><h2>首页 Hero</h2></div>';
+  h+=bfIN('标题','Title','hero','title');
+  h+=bfIN('副标题','Subtitle','hero','subtitle');
+  h+=bfTA('描述','Description','hero','description');
+  h+=bfIN('按钮1','Button 1','hero','cta1');
+  h+=bfIN('按钮2','Button 2','hero','cta2');
+  h+=bfIN('按钮3','Button 3','hero','cta3');
+  document.getElementById('contentArea').innerHTML=h;
+}
+
+// ============ Project Background ============
+function rPB(){
+  var h='<div class="section-header"><h2>项目背景</h2></div>';
+  h+=bfIN('标题','Title','projectBg','sectionTitle');
+  h+=bfIN('副标题','Subtitle','projectBg','sectionSubtitle');
+  h+=sharedImg('图片路径','projectBg','image');
+  var len=Math.max(S.zh.projectBg.paragraphs.length,S.en.projectBg.paragraphs.length);
+  for(var i=0;i<len;i++){
+    h+='<div style="position:relative">';
+    h+=bfArrIN('段落','Paragraph','projectBg','paragraphs',i);
+    h+='<button class="btn-del" style="position:absolute;right:0;top:0;font-size:12px;padding:2px 10px" onclick="delPBPara('+i+')">删除</button>';
+    h+='</div>';
+  }
+  h+='<button class="btn-add" onclick="addPBPara()">+ 添加段落 / Add Paragraph</button>';
+  document.getElementById('contentArea').innerHTML=h;
+}
+function addPBPara(){S.zh.projectBg.paragraphs.push('');S.en.projectBg.paragraphs.push('');renderSection()}
+function delPBPara(i){showCf('删除段落','确认删除此段落？',function(){S.zh.projectBg.paragraphs.splice(i,1);S.en.projectBg.paragraphs.splice(i,1);renderSection()})}
+
+// ============ Weave ============
+function rWeave(){
+  var h='<div class="section-header"><h2>织·西兰卡普</h2></div>';
+  h+=bfIN('标题','Title','weave','sectionTitle');
+  h+=bfIN('副标题','Subtitle','weave','sectionSubtitle');
+  h+=bfTA('描述','Description','weave','description');
+  h+='<hr class="divider"><div class="sub-title">纹样图案 Patterns ('+S.zh.weave.patterns.length+')</div>';
+  for(var i=0;i<S.zh.weave.patterns.length;i++){
+    var p='weave.patterns.'+i;
+    h+='<div class="card collapsed"><div class="card-h" onclick="togCard(this)">';
+    h+='<span class="card-t">'+(i+1)+'. '+esc((navObj(S.zh,p)||{}).name)+' / '+esc((navObj(S.en,p)||{}).name)+'</span>';
+    h+='<button class="btn-del" onclick="event.stopPropagation();delPat('+i+')">删除</button>';
+    h+='<span class="arrow">&#9660;</span></div><div class="card-b">';
+    h+=bfIN('名称','Name',p,'name');
+    h+=bfIN('土家语','Tujia Name',p,'tujiaName');
+    h+=sharedImg('图片路径',p,'image');
+    h+=bfTA('象征寓意','Symbolism',p,'symbolism');
+    h+=bfTA('口述历史','Oral History',p,'oralHistory');
+    h+='</div></div>';
+  }
+  h+='<button class="btn-add" onclick="addPat()">+ 添加纹样 / Add Pattern</button>';
+  document.getElementById('contentArea').innerHTML=h;
+}
+function delPat(i){showCf('删除纹样','确认删除此纹样？',function(){S.zh.weave.patterns.splice(i,1);S.en.weave.patterns.splice(i,1);renderSection()})}
+function addPat(){S.zh.weave.patterns.push({name:'',nameEn:'',tujiaName:'',image:'',symbolism:'',oralHistory:''});S.en.weave.patterns.push({name:'',nameEn:'',tujiaName:'',image:'',symbolism:'',oralHistory:''});renderSection()}
+
+// ============ Custom (parent overview) ============
+function rCustomSec(){
+  var h='<div class="section-header"><h2>俗·习俗与禁忌</h2></div>';
+  h+=bfIN('标题','Title','custom','sectionTitle');
+  h+=bfIN('副标题','Subtitle','custom','sectionSubtitle');
+  h+=bfTA('描述','Description','custom','description');
+  h+='<hr class="divider"><p style="color:#999;font-size:14px">请在左侧菜单选择子节点编辑具体内容：</p>';
+  h+='<div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">';
+  var subs=[{id:'customs',l:'习俗 Customs'},{id:'solarTerms',l:'节气 Solar Terms'},{id:'taboos',l:'禁忌 Taboos'},{id:'homeConstruction',l:'房屋建造 House-Building'},{id:'weddingFuneral',l:'婚丧仪式 Wedding & Funeral'}];
+  subs.forEach(function(s){
+    h+='<button class="btn-add" style="text-align:left;padding:12px 20px" onclick="switchSec(\''+s.id+'\')">'+s.l+' &#8594;</button>';
+  });
+  h+='</div>';
+  document.getElementById('contentArea').innerHTML=h;
+}
+
+// ============ Customs ============
+function rCustoms(){
+  var h='<div class="section-header"><h2>习俗 Customs</h2></div>';
+  var len=Math.max(S.zh.custom.customs.length,S.en.custom.customs.length);
+  for(var i=0;i<len;i++){
+    var p='custom.customs.'+i;
+    h+='<div class="card collapsed"><div class="card-h" onclick="togCard(this)">';
+    h+='<span class="card-t">'+(i+1)+'. '+esc((navObj(S.zh,p)||{}).title)+' / '+esc((navObj(S.en,p)||{}).title)+'</span>';
+    h+='<button class="btn-del" onclick="event.stopPropagation();delCus('+i+')">删除</button>';
+    h+='<span class="arrow">&#9660;</span></div><div class="card-b">';
+    h+=bfIN('标题','Title',p,'title');
+    h+=bfIN('副标题','Subtitle',p,'subtitle');
+    h+=bfTA('内容','Content',p,'content');
+    h+='</div></div>';
+  }
+  h+='<button class="btn-add" onclick="addCus()">+ 添加习俗 / Add Custom</button>';
+  document.getElementById('contentArea').innerHTML=h;
+}
+function delCus(i){showCf('删除习俗','确认删除此习俗？',function(){S.zh.custom.customs.splice(i,1);S.en.custom.customs.splice(i,1);renderSection()})}
+function addCus(){S.zh.custom.customs.push({title:'',subtitle:'',content:''});S.en.custom.customs.push({title:'',subtitle:'',content:''});renderSection()}
+
+// ============ Solar Terms ============
+function rSolar(){
+  var h='<div class="section-header"><h2>节气 Solar Terms</h2></div>';
+  h+=bfIN('标题','Title','custom','solarTitle');
+  h+=bfTA('内容 (支持HTML)','Content (HTML)','custom','solarContent');
+  document.getElementById('contentArea').innerHTML=h;
+}
+
+// ============ Taboos ============
+function rTaboos(){
+  var h='<div class="section-header"><h2>禁忌 Taboos</h2></div>';
+  var len=Math.max(S.zh.custom.taboos.length,S.en.custom.taboos.length);
+  for(var i=0;i<len;i++){
+    var p='custom.taboos.'+i;
+    h+='<div class="card collapsed"><div class="card-h" onclick="togCard(this)">';
+    h+='<span class="card-t">'+(i+1)+'. '+esc((navObj(S.zh,p)||{}).title)+' / '+esc((navObj(S.en,p)||{}).title)+'</span>';
+    h+='<button class="btn-del" onclick="event.stopPropagation();delTab('+i+')">删除</button>';
+    h+='<span class="arrow">&#9660;</span></div><div class="card-b">';
+    h+=bfIN('标题','Title',p,'title');
+    h+=bfTA('内容','Content',p,'content');
+    h+='</div></div>';
+  }
+  h+='<button class="btn-add" onclick="addTab()">+ 添加禁忌 / Add Taboo</button>';
+  document.getElementById('contentArea').innerHTML=h;
+}
+function delTab(i){showCf('删除禁忌','确认删除此禁忌？',function(){S.zh.custom.taboos.splice(i,1);S.en.custom.taboos.splice(i,1);renderSection()})}
+function addTab(){S.zh.custom.taboos.push({title:'',content:''});S.en.custom.taboos.push({title:'',content:''});renderSection()}
+
+// ============ Home Construction ============
+function rHome(){
+  var h='<div class="section-header"><h2>房屋建造</h2></div>';
+  h+=bfIN('标题','Title','homeConstruction','sectionTitle');
+  h+=bfIN('副标题','Subtitle','homeConstruction','sectionSubtitle');
+  var len=Math.max(S.zh.homeConstruction.paragraphs.length,S.en.homeConstruction.paragraphs.length);
+  for(var i=0;i<len;i++){
+    h+=bfArrIN('段落','Paragraph','homeConstruction','paragraphs',i);
+  }
+  h+='<button class="btn-add" onclick="addHomePara()">+ 添加段落 / Add Paragraph</button>';
+  document.getElementById('contentArea').innerHTML=h;
+}
+function addHomePara(){S.zh.homeConstruction.paragraphs.push('');S.en.homeConstruction.paragraphs.push('');renderSection()}
+
+// ============ Wedding & Funeral ============
+function rWF(){
+  var h='<div class="section-header"><h2>婚丧仪式</h2></div>';
+  h+=bfIN('标题','Title','weddingFuneral','sectionTitle');
+  h+=bfIN('副标题','Subtitle','weddingFuneral','sectionSubtitle');
+  var len=Math.max(S.zh.weddingFuneral.branches.length,S.en.weddingFuneral.branches.length);
+  for(var i=0;i<len;i++){
+    var p='weddingFuneral.branches.'+i;
+    h+='<div class="card collapsed"><div class="card-h" onclick="togCard(this)">';
+    h+='<span class="card-t">'+(i+1)+'. '+esc((navObj(S.zh,p)||{}).title)+' / '+esc((navObj(S.en,p)||{}).title)+'</span>';
+    h+='<button class="btn-del" onclick="event.stopPropagation();delBranch('+i+')">删除</button>';
+    h+='<span class="arrow">&#9660;</span></div><div class="card-b">';
+    h+=bfIN('标题','Title',p,'title');
+    h+=bfTA('内容','Content',p,'content');
+    h+='</div></div>';
+  }
+  h+='<button class="btn-add" onclick="addBranch()">+ 添加分支 / Add Branch</button>';
+  document.getElementById('contentArea').innerHTML=h;
+}
+function delBranch(i){showCf('删除分支','确认删除此分支？',function(){S.zh.weddingFuneral.branches.splice(i,1);S.en.weddingFuneral.branches.splice(i,1);renderSection()})}
+function addBranch(){S.zh.weddingFuneral.branches.push({title:'',titleEn:'',content:''});S.en.weddingFuneral.branches.push({title:'',titleEn:'',content:''});renderSection()}
+
+// ============ Objects ============
+function rObj(){
+  var h='<div class="section-header"><h2>物·日常器物</h2></div>';
+  h+=bfIN('标题','Title','object','sectionTitle');
+  h+=bfIN('副标题','Subtitle','object','sectionSubtitle');
+  h+=bfTA('描述','Description','object','description');
+  h+='<hr class="divider">';
+  var len=Math.max(S.zh.object.items.length,S.en.object.items.length);
+  for(var i=0;i<len;i++){
+    var p='object.items.'+i;
+    h+='<div class="card collapsed"><div class="card-h" onclick="togCard(this)">';
+    h+='<span class="card-t">'+(i+1)+'. '+esc((navObj(S.zh,p)||{}).name)+' / '+esc((navObj(S.en,p)||{}).name)+'</span>';
+    h+='<button class="btn-del" onclick="event.stopPropagation();delObj('+i+')">删除</button>';
+    h+='<span class="arrow">&#9660;</span></div><div class="card-b">';
+    h+=bfIN('名称','Name',p,'name');
+    h+=sharedImg('图片路径',p,'image');
+    h+=bfTA('用途','Usage',p,'usage');
+    h+=bfIN('位置','Location',p,'location');
+    h+=bfIN('状态','Status',p,'status');
+    h+='</div></div>';
+  }
+  h+='<button class="btn-add" onclick="addObj()">+ 添加器物 / Add Object</button>';
+  document.getElementById('contentArea').innerHTML=h;
+}
+function delObj(i){showCf('删除器物','确认删除此器物？',function(){S.zh.object.items.splice(i,1);S.en.object.items.splice(i,1);renderSection()})}
+function addObj(){S.zh.object.items.push({name:'',image:'',usage:'',location:'',status:''});S.en.object.items.push({name:'',image:'',usage:'',location:'',status:''});renderSection()}
+
+// ============ Sound ============
+function rSnd(){
+  var h='<div class="section-header"><h2>声·方言与歌</h2></div>';
+  h+=bfIN('标题','Title','sound','sectionTitle');
+  h+=bfIN('副标题','Subtitle','sound','sectionSubtitle');
+  h+=bfTA('描述','Description','sound','description');
+  h+='<hr class="divider">';
+  var len=Math.max(S.zh.sound.entries.length,S.en.sound.entries.length);
+  for(var i=0;i<len;i++){
+    var p='sound.entries.'+i;
+    h+='<div class="card collapsed"><div class="card-h" onclick="togCard(this)">';
+    h+='<span class="card-t">'+(i+1)+'. '+esc((navObj(S.zh,p)||{}).category)+' / '+esc((navObj(S.en,p)||{}).category)+'</span>';
+    h+='<button class="btn-del" onclick="event.stopPropagation();delSnd('+i+')">删除</button>';
+    h+='<span class="arrow">&#9660;</span></div><div class="card-b">';
+    h+=bfIN('类别','Category',p,'category');
+    h+=bfTA('表演者/传承人','Performer',p,'performer');
+    h+=bfTA('描述','Description',p,'description');
+    h+=bfIN('音频备注','Audio Note',p,'audioNote');
+    h+=sharedIN('外部视频链接',p,'videoLink');
+    h+='</div></div>';
+  }
+  h+='<button class="btn-add" onclick="addSnd()">+ 添加条目 / Add Entry</button>';
+  document.getElementById('contentArea').innerHTML=h;
+}
+function delSnd(i){showCf('删除条目','确认删除此条目？',function(){S.zh.sound.entries.splice(i,1);S.en.sound.entries.splice(i,1);renderSection()})}
+function addSnd(){S.zh.sound.entries.push({category:'',performer:'',description:'',audio:'',audioNote:'',videoLink:''});S.en.sound.entries.push({category:'',performer:'',description:'',audio:'',audioNote:'',videoLink:''});renderSection()}
+
+// ============ People ============
+function rPeople(){
+  var h='<div class="section-header"><h2>人·当代土家人</h2></div>';
+  h+=bfIN('标题','Title','people','sectionTitle');
+  h+=bfIN('副标题','Subtitle','people','sectionSubtitle');
+  h+=bfTA('描述','Description','people','description');
+  h+='<hr class="divider">';
+  var len=Math.max(S.zh.people.profiles.length,S.en.people.profiles.length);
+  for(var i=0;i<len;i++){
+    var p='people.profiles.'+i;
+    h+='<div class="card collapsed"><div class="card-h" onclick="togCard(this)">';
+    var zhP=navObj(S.zh,p)||{},enP=navObj(S.en,p)||{};
+    h+='<span class="card-t">'+(i+1)+'. '+esc(zhP.name)+' / '+esc(enP.name)+(zhP.age?' ('+zhP.age+')':'')+'</span>';
+    h+='<button class="btn-del" onclick="event.stopPropagation();delPpl('+i+')">删除</button>';
+    h+='<span class="arrow">&#9660;</span></div><div class="card-b">';
+    h+=bfIN('姓名','Name',p,'name');
+    h+=bfIN('年龄','Age',p,'age');
+    h+=bfIN('身份/角色','Role',p,'role');
+    h+=bfTA('自述/引言','Quote',p,'quote');
+    h+='</div></div>';
+  }
+  h+='<button class="btn-add" onclick="addPpl()">+ 添加人物 / Add Profile</button>';
+  document.getElementById('contentArea').innerHTML=h;
+}
+function delPpl(i){showCf('删除人物','确认删除此人物？',function(){S.zh.people.profiles.splice(i,1);S.en.people.profiles.splice(i,1);renderSection()})}
+function addPpl(){S.zh.people.profiles.push({name:'',age:'',role:'',quote:''});S.en.people.profiles.push({name:'',age:'',role:'',quote:''});renderSection()}
+
+// ============ Products ============
+function rProd(){
+  var h='<div class="section-header"><h2>文创产品</h2></div>';
+  h+=bfIN('标题','Title','products','sectionTitle');
+  h+=bfIN('副标题','Subtitle','products','sectionSubtitle');
+  h+=bfTA('描述','Description','products','description');
+  var cats=[{k:'softFabrics',n:'纺织织物 Soft Fabrics'},{k:'homeFurnishings',n:'家居软装 Home Furnishings'},{k:'stationery',n:'文具小物件 Stationery'},{k:'outdoor',n:'户外生活方式 Outdoor'}];
+  cats.forEach(function(cat){
+    h+='<hr class="divider"><div class="sub-title">'+cat.n+'</div>';
+    h+=bfIN('分类标题','Category Title','products.'+cat.k,'title');
+    var len=Math.max(S.zh.products[cat.k].items.length,S.en.products[cat.k].items.length);
+    for(var i=0;i<len;i++){
+      var p='products.'+cat.k+'.items.'+i;
+      h+='<div class="card collapsed"><div class="card-h" onclick="togCard(this)">';
+      var zhPr=navObj(S.zh,p)||{},enPr=navObj(S.en,p)||{};
+      h+='<span class="card-t">'+(i+1)+'. '+esc(zhPr.name)+' / '+esc(enPr.name)+' - '+esc(zhPr.price)+'</span>';
+      h+='<button class="btn-del" onclick="event.stopPropagation();delProd(\''+cat.k+'\','+i+')">删除</button>';
+      h+='<span class="arrow">&#9660;</span></div><div class="card-b">';
+      h+=bfIN('名称','Name',p,'name');
+      h+=bfIN('价格','Price',p,'price');
+      h+=sharedImg('图片路径',p,'image');
+      h+=sharedIN('淘宝链接',p,'link');
+      h+='</div></div>';
+    }
+    h+='<button class="btn-add" onclick="addProd(\''+cat.k+'\')">+ 添加产品 / Add Product</button>';
+  });
+  document.getElementById('contentArea').innerHTML=h;
+}
+function delProd(cat,i){showCf('删除产品','确认删除此产品？',function(){S.zh.products[cat].items.splice(i,1);S.en.products[cat].items.splice(i,1);renderSection()})}
+function addProd(cat){
+  var item={name:'',price:'',image:'',link:''};
+  S.zh.products[cat].items.push(JSON.parse(JSON.stringify(item)));
+  S.en.products[cat].items.push(JSON.parse(JSON.stringify(item)));
+  renderSection();
+}
+
+// Sync arrays between two data objects: pad shorter arrays to match longer ones
+function syncArrays(a, b){
+  if(!a||typeof a!=='object'||!b||typeof b!=='object')return;
+  for(var k in b){
+    if(!b.hasOwnProperty(k))continue;
+    if(Array.isArray(b[k])){
+      if(!Array.isArray(a[k]))a[k]=[];
+      while(a[k].length<b[k].length){
+        a[k].push(typeof b[k][0]==='object'&&b[k][0]!==null?{}:'');
+      }
+    }else if(typeof b[k]==='object'&&!Array.isArray(b[k])){
+      if(typeof a[k]!=='object'||Array.isArray(a[k]))a[k]={};
+      syncArrays(a[k],b[k]);
+    }
+  }
+}
+
+// Deep merge: preserve fields from orig that edited doesn't have (for objects)
+function deepMerge(orig, edited){
+  if(!orig || typeof orig !== 'object') return edited;
+  if(!edited || typeof edited !== 'object') return edited;
+  if(Array.isArray(orig) || Array.isArray(edited)){
+    var oArr=Array.isArray(orig)?orig:[];
+    var eArr=Array.isArray(edited)?edited:[];
+    // Object arrays: preserve ALL orig items, merge with edited by index, append extra edited items
+    if(oArr.length>0&&typeof oArr[0]==='object'&&oArr[0]!==null){
+      var arrResult=[];
+      for(var i=0;i<oArr.length;i++){
+        var oItem=oArr[i],eItem=i<eArr.length?eArr[i]:null;
+        if(eItem&&typeof eItem==='object'){
+          var merged={};
+          for(var k in oItem)if(oItem.hasOwnProperty(k))merged[k]=oItem[k];
+          for(var k in eItem){
+            if(eItem.hasOwnProperty(k)){
+              if(typeof eItem[k]==='string'&&eItem[k]===''&&merged.hasOwnProperty(k)){
+                /* keep orig value when edited field is empty */
+              }else{
+                merged[k]=eItem[k];
+              }
+            }
+          }
+          arrResult.push(merged);
+        }else{
+          arrResult.push(JSON.parse(JSON.stringify(oItem)));
+        }
+      }
+      // Append extra edited items beyond orig length (genuinely new items)
+      for(var i=oArr.length;i<eArr.length;i++){
+        arrResult.push(eArr[i]);
+      }
+      return arrResult;
+    }
+    // Primitive arrays (e.g. paragraphs): use edited as-is
+    return eArr.length>0?eArr:oArr;
+  }
+  var result = {};
+  // Copy all keys from orig first
+  for(var k in orig){ if(orig.hasOwnProperty(k)) result[k] = orig[k]; }
+  // Then overlay edited keys
+  for(var k in edited){
+    if(edited.hasOwnProperty(k)){
+      if(result.hasOwnProperty(k) && typeof result[k] === 'object' && !Array.isArray(result[k]) && typeof edited[k] === 'object' && !Array.isArray(edited[k])){
+        result[k] = deepMerge(result[k], edited[k]);
+      } else {
+        result[k] = edited[k];
+      }
+    }
+  }
+  return result;
+}
+
+// ============ Save (GitHub Contents API) ============
+async function saveAll(){
+  try{
+    if(!GH.token){toast('请先连接 GitHub',1);return}
+    var tpl=document.getElementById('appjs-template').textContent;
+    if(!tpl){toast('请先加载 app.js',1);return}
+
+    // Update APP_VERSION timestamp so live site auto-refreshes (bypasses CDN cache)
+    var now=new Date();
+    var ts=now.getFullYear()
+      +String(now.getMonth()+1).padStart(2,'0')
+      +String(now.getDate()).padStart(2,'0')
+      +String(now.getHours()).padStart(2,'0')
+      +String(now.getMinutes()).padStart(2,'0');
+    tpl=tpl.replace(/APP_VERSION\s*=\s*['"][^'"]*['"]/, "APP_VERSION = '"+ts+"'");
+
+    // Deep-merge edited data with original parsed data to preserve unknown fields
+    // deepMerge now handles arrays element-by-element, preserving orig values for empty edited fields
+    var zhMerged = deepMerge(S._origZh, S.zh);
+    var enMerged = deepMerge(S._origEn, S.en);
+
+    var zhJs=JSON.stringify(zhMerged,null,2);
+    var enJs=JSON.stringify(enMerged,null,2);
+
+    var r1=replData(tpl,'dataZh',zhJs);
+    if(!r1){toast('保存失败: 找不到 dataZh',1);return}
+    var r2=replData(r1,'dataEn',enJs);
+    if(!r2){toast('保存失败: 找不到 dataEn',1);return}
+
+    document.getElementById('btnSave').textContent='提交中...';
+    document.getElementById('btnSave').disabled=true;
+    // Fetch latest SHA to avoid mismatch if file was modified externally
+    try{
+      var latest=await ghFetch(GH.basePath);
+      S.sha=latest.sha;
+    }catch(e){/* use existing sha */}
+    var result=await putAppJs(r2,S.sha);
+    S.sha=result.content.sha;
+
+    // Update template to new content so subsequent saves use fresh base
+    document.getElementById('appjs-template').textContent=r2;
+    // Re-parse originals from new template for next save cycle
+    S._origZh=JSON.parse(JSON.stringify(zhMerged));
+    S._origEn=JSON.parse(JSON.stringify(enMerged));
+
+    // Update index.html cache-busting so live site loads fresh app.js
+    try{ await updateCacheBust(); }catch(e){/* non-critical */}
+
+    toast('已提交到 GitHub！正在打开线上页面...',0);
+    document.getElementById('btnSave').textContent='提交到 GitHub';
+    document.getElementById('btnSave').disabled=false;
+
+    // Auto-open live site with cache-busting so user sees changes immediately
+    var liveUrl='https://xuteng0627.github.io/bifzixkar/bifzixkar/index.html?v='+Date.now();
+    setTimeout(function(){ window.open(liveUrl,'_blank'); },1500);
+  }catch(e){
+    toast('提交失败: '+e.message,1);
+    document.getElementById('btnSave').textContent='提交到 GitHub';
+    document.getElementById('btnSave').disabled=false;
+  }
+}
+
+// Update cache-busting version in index.html on GitHub
+async function updateCacheBust(){
+  var idxPath='bifzixkar/index.html';
+  var idxResult=await ghFetch(idxPath);
+  var idxBin=atob(idxResult.content);
+  var idxBytes=new Uint8Array(idxBin.length);
+  for(var i=0;i<idxBin.length;i++)idxBytes[i]=idxBin.charCodeAt(i);
+  var idxContent=new TextDecoder('utf-8').decode(idxBytes);
+  var now=new Date();
+  var ts=now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+String(now.getHours()).padStart(2,'0')+String(now.getMinutes()).padStart(2,'0');
+  idxContent=idxContent.replace(/js\/app\.js\?v=[^\s"']*/g,'js/app.js?v='+ts);
+  idxContent=idxContent.replace(/css\/style\.css\?v=[^\s"']*/g,'css/style.css?v='+ts);
+  var idxB64=btoa(unescape(encodeURIComponent(idxContent)));
+  await ghPut(idxPath,idxB64,'Update cache-bust via editor',idxResult.sha);
+}
+
+function replData(tpl,varName,json){
+  var ps=['const '+varName+' = {','let '+varName+' = {','var '+varName+' = {',varName+' = {'];
+  var si=-1,m=null;
+  for(var i=0;i<ps.length;i++){si=tpl.indexOf(ps[i]);if(si>=0){m=ps[i];break}}
+  if(si<0)return null;
+  var d=0,ei=-1,ds=si+m.length-1;
+  for(var i=ds;i<tpl.length;i++){
+    var c=tpl[i];
+    if(c==='{')d++;
+    else if(c==='}'){d--;if(d===0){ei=i;break}}
+    if(c==='"'){i++;while(i<tpl.length&&tpl[i]!=='"'){if(tpl[i]==='\\')i++;i++}}
+    else if(c==="'"){i++;while(i<tpl.length&&tpl[i]!=="'"){if(tpl[i]==='\\')i++;i++}}
+    else if(c==='`'){i++;while(i<tpl.length&&tpl[i]!=='`'){if(tpl[i]==='\\')i++;i++}}
+  }
+  if(ei<0)return null;
+  var semi=ei+1;
+  if(tpl[semi]===';')semi++;
+  return tpl.substring(0,si)+'const '+varName+' = '+json+';'+tpl.substring(semi);
+}
+
+// ============ Start ============
+init();
+</script>
+</body>
+</html>
