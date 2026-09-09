@@ -2109,7 +2109,18 @@
 
       card.className = 'people-card fade-in';
 
-      // Skip image area — no person photos available
+      // Image area
+      if (profile.image) {
+        var imageDiv = document.createElement('div');
+        imageDiv.className = 'people-card-image';
+        var img = document.createElement('img');
+        img.src = profile.image;
+        img.alt = profile.name;
+        img.loading = 'lazy';
+        img.onerror = function() { imageDiv.innerHTML = '<span class="placeholder-icon">&#x2606;</span>'; };
+        imageDiv.appendChild(img);
+        card.appendChild(imageDiv);
+      }
 
       var body = document.createElement('div');
 
