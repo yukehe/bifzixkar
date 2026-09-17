@@ -49,6 +49,28 @@
       "Staying Bifzixkar 试图提供另一种可能：让本地年轻人成为自己文化的记录者与叙述者，同时通过文化周边产品的销售创造实际经济收益，使\"留在家乡\"成为一个有尊严、有可持续收入的选择。"
     ]
   },
+  "founders": {
+    "sectionTitle": "网站创始人",
+    "sectionSubtitle": "Website Founders",
+    "summary": "三个年轻人建立这个网站，希望成为土家文化的记录者与叙述者，让文化走出大山，让世界认识彭家寨，了解土家族。同时通过链接周边文创产品销售，创造实际经济收益，帮助家乡经济发展。",
+    "profiles": [
+      {
+        "name": "何雨珂",
+        "image": "images/founders/heyuke.png",
+        "description": "土家族，祖辈彭家寨人，父辈考取大学外出读书，现为南京外国语学校学生。因为常在现代化城市和乡土故乡之间游走，对自身土家身份认同和土家文化传承进行了深入思考和研究。"
+      },
+      {
+        "name": "刘凯",
+        "image": "images/founders/luliai.png",
+        "description": "土家族，建始人。土家文创产品店店主。"
+      },
+      {
+        "name": "杨慧",
+        "image": "images/founders/yanghui.png",
+        "description": "土家族，彭家寨人。熟悉当地民俗和村民，对接当地资源。"
+      }
+    ]
+  },
   "cultureArchive": {
     "sectionTitle": "文化档案",
     "sectionSubtitle": "Culture Archive",
@@ -589,6 +611,28 @@
       "The project stems from a recurring dilemma in Pengjiazhai: youth of the Tujia ethnic group face an extremely narrow range of choices：remaining in the local communities means entering the tourism service sector, trading a low salary for a position of being gazed upon; leaving the homeland for the cities means severing their connection with their cultural roots. Between these two paths, there is no third option.",
       "Simultaneously, Tujia culture is being \"preserved\" in a particular manner: brocade patterns are incorporated into scenic area decorations, the Tima ritual is adapted into festival performances,  and the \"Crying at Marriage\" song is transformed into stage productions. These preservation efforts ensure the survival of cultural forms,  simultaneously leading to the hollowing out of cultural meaning.",
       "\"Staying Bifzixkar\" seeks to offer an alternative approach: empowering local youth to serve as recorders and narrators of their own culture, while generating tangible economic benefits through the sale of cultural merchandise, thereby making \"staying in the hometown\" a dignified and financially sustainable choice."
+    ]
+  },
+  "founders": {
+    "sectionTitle": "Website Founders",
+    "sectionSubtitle": "Website Founders",
+    "summary": "The three young people establish the website with the aim of serving as chroniclers and narrators of Tujia culture, helping the culture emerge beyond the mountains and introducing the world to Pengjiazhai and the Tujia people. At the same time, by linking to the sale of local cultural and creative products, they aim to generate tangible economic benefits and support the development of their hometown's economy.",
+    "profiles": [
+      {
+        "name": "He Yuke",
+        "image": "images/founders/heyuke.png",
+        "description": "Tujia ethnic, traces her ancestry back to Pengjiazhai. Her father pursued higher education at Nanjing Agricultural University. She is currently a student at Nanjing Foreign Languages School. Due to frequent travels between modern urban life and rural hometown, she has engaged in deep reflection and research on Tujia identity and the preservation of Tujia cultural heritage."
+      },
+      {
+        "name": "Liu Kai",
+        "image": "images/founders/luliai.png",
+        "description": "Tujia ethnic, hails from Jianshi County. Tujia cultural and creative products shop owner."
+      },
+      {
+        "name": "Yang Hui",
+        "image": "images/founders/yanghui.png",
+        "description": "Tujia ethnic, hails from Pengjiazhai. She is well-versed in local customs and the villagers with effectively local resources."
+      }
     ]
   },
   "cultureArchive": {
@@ -1319,6 +1363,8 @@
 
     renderProjectBg();
 
+    renderFounders();
+
     renderCultureArchive();
 
     renderWeave();
@@ -1412,6 +1458,57 @@
       });
 
     }
+
+  }
+
+
+
+  /* ====== Founders ====== */
+
+  function renderFounders() {
+
+    setText('[data-i18n="founders.sectionTitle"]', data.founders.sectionTitle);
+
+    var summaryEl = document.getElementById('foundersSummary');
+    if (summaryEl) {
+      summaryEl.textContent = data.founders.summary;
+    }
+
+    var grid = document.getElementById('foundersGrid');
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    data.founders.profiles.forEach(function(profile) {
+      var card = document.createElement('div');
+      card.className = 'founder-card fade-in';
+
+      var imageDiv = document.createElement('div');
+      imageDiv.className = 'founder-image';
+      var img = document.createElement('img');
+      img.src = profile.image;
+      img.alt = profile.name;
+      img.loading = 'lazy';
+      img.onerror = function() { imageDiv.innerHTML = '<span class="placeholder-icon">&#x2606;</span>'; };
+      imageDiv.appendChild(img);
+      card.appendChild(imageDiv);
+
+      var info = document.createElement('div');
+      info.className = 'founder-info';
+
+      var nameEl = document.createElement('div');
+      nameEl.className = 'founder-name';
+      nameEl.textContent = profile.name;
+      info.appendChild(nameEl);
+
+      var descEl = document.createElement('div');
+      descEl.className = 'founder-description';
+      descEl.textContent = profile.description;
+      info.appendChild(descEl);
+
+      card.appendChild(info);
+      grid.appendChild(card);
+    });
 
   }
 
